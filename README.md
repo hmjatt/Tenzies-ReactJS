@@ -253,7 +253,7 @@ npm start
 
 #### Quote ✒️
 
-    “People think computers will keep them from making mistakes. They're wrong. With computers you make mistakes faster.”
-    — Adam Osborne
+    “Humans are allergic to change. They love to say, ‘We’ve always done it this way.’ I try to fight that. That’s why I have a clock on my wall that runs counterclockwise.”
+    — Grace Hopper
 
 > ♾️❇️🔥
