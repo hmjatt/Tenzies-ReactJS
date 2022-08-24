@@ -1,4 +1,4 @@
-# Tenzies-ReactJS
+# Tenzies-ReactJS 🎲
 
 Create a **`Tenzies Game`** using `ReactJS`
 
@@ -252,8 +252,8 @@ npm start
 <hr>
 
 #### Quote ✒️
-<!-- 
+
     “People think computers will keep them from making mistakes. They're wrong. With computers you make mistakes faster.”
     — Adam Osborne
 
-> 🦝👻😶‍🌫️ -->
+> ♾️❇️🔥
