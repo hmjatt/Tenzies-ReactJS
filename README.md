@@ -66,13 +66,13 @@ npm start
 
 ### 2. Organize Project 🗄️
 
-<!-- -   [x] Create a `components` folder inside the `src` directory.
+-   [ ] Create a `components` folder inside the `src` directory.
 
--   [x] Create **custom components** inside the `components` folder.
+-   [ ] Create **custom components** inside the `components` folder.
 
--   [x] Create an `images` folder inside the `src` directory and add images/logos inside it.
+-   [ ] Create an `images` folder inside the `src` directory and add images/logos inside it.
 
--   [x] Create a `styles` folder inside the `src` directory and add `.css` files inside it. -->
+-   [ ] Create a `styles` folder inside the `src` directory and add `.css` files inside it.
 
 
 ### 3. Clean Directory🧹
