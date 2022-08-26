@@ -196,8 +196,10 @@ npm start
 
 ## Future Changes ♾️
 
-<!-- -   [ ] Only show `meme images` that are compatible with app design(_2 text fields - top & bottom_).
--   [ ] Update the form based upon the retrieved `meme image`. -->
+-   [ ] CSS - Put *Real Dots* on the *Dice*.
+-   [ ] JS - Track Number of *Rolls* it took to win the game.
+-   [ ] JS - Track the *time* it took to win the game.
+-   [ ] JS - Save *Best Time/Rolls* to `localStorage` and try to beat the record.
 
 <hr>
 
