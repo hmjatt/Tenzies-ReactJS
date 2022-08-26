@@ -11,7 +11,7 @@ Create a **`Tenzies Game`** using `ReactJS`
 
 ### About ℹ️
 
-An implementation of **`Tenzies Game`** in `ReactJS`. While creating this project I learned about `Event Listeners in React`, `React State`, `Conditional Rendering in React`, `React Forms`, `React Hooks(useEffect)`, `Lazy State Initialization`, etc. After creating the project, it was deployed to `GitHub Pages` :bird: Feel free to reach me on[Twitter](https://twitter.com/hmjatt/) 🪶
+An implementation of **`Tenzies Game`** in `ReactJS`. While creating this project I learned about `Event Listeners in React`, `React State`, `Conditional Rendering in React`, `React Forms`, `React Hooks(useEffect)`, `Lazy State Initialization`, etc. After creating the project, it was deployed to `GitHub Pages` :bird: Feel free to reach me on[Twitter](https://twitter.com/hmjatt/) 👾
 
 <hr>
 
@@ -61,7 +61,7 @@ npm start
 -   [x] Initialize the project using `npx create-react-app tenzies` which will create a
     complete **React App** pre-configured and pre-installed with all the dependencies.
 
--   [ ] Import **`Karla`** font from google fonts and apply it to the **`App`** component.
+-   [x] Import **`Karla`** font from google fonts and apply it to the **`App`** component.
 
 
 ### 2. Organize Project 🗄️
