@@ -53,7 +53,6 @@ npm start
 ```
 
 <hr>
-<hr>
 
 ## Steps I followed to complete this project 🪜
 
@@ -64,9 +63,8 @@ npm start
 
 -   [x] Import **`Karla`** font from google fonts and apply it to the **`App`** component. -->
 
-<hr>
 
-### 2. Organize components 🗄️
+### 2. Organize Project 🗄️
 
 <!-- -   [x] Create a `components` folder inside the `src` directory.
 
@@ -76,15 +74,13 @@ npm start
 
 -   [x] Create a `styles` folder inside the `src` directory and add `.css` files inside it. -->
 
-<hr>
 
 ### 3. Clean directory🧹
 
 <!-- -   [x] Delete **unnecessary** files and code from the directory. -->
 
-<hr>
 
-### 4. Header Component 🧩
+### 4. Die Component 🧩
 
 <!-- -   [x] Create a **`Header`** component and basic JSX elements for it.
 
@@ -96,19 +92,6 @@ npm start
 
 -   [x] Style **`Header`** and **`App`** component. -->
 
-<hr>
-
-### 5. Meme Component 🧩
-
-<!-- -   [x] Create a **`Meme`** component and basic JSX elements for it.
-
--   [x] Add appropriate `className`s to elements in the `Meme` component.
-
--   [x] Import **`Meme`** component inside **`App`** component.
-
--   [x] Add basic style to **`Meme`** component. -->
-
-<hr>
 
 ### 6. Footer Component 🧩
 
@@ -118,7 +101,6 @@ npm start
 
 -   [x] Style **`Footer`** component. -->
 
-<hr>
 
 <!-- ### 7. Get Random Meme 🪄 -->
 
@@ -132,7 +114,6 @@ npm start
 
 -   [x] `console.log(url)` for now as our `UI` won't update if we insert the `url` _variable_ inside the **`Meme`** component. Because this has everything to do with the way _react_ deals with updating the `UI` using _variables_. `⚠️ Spoiler Alert!!!: React doesn't just insert every variable that is declared inside our component`. -->
 
-<hr>
 
 <!-- ### 8. Add Images to the Meme Generator 🖼️ -->
 
@@ -146,7 +127,6 @@ npm start
 
 -   [x] Style newly created `<img />` element. -->
 
-<hr>
 
 ### 7. Refactor State 🔃
 
@@ -158,7 +138,6 @@ npm start
 
 -   [x] Lastly, update the `getMemeImage` function and the markup to reflect our newly reformed state object and array in the correct way -->
 
-<hr>
 
 <!-- ### 10. Add Text to Image 📝
 
@@ -176,7 +155,6 @@ npm start
 
 -   [x] Style `className=meme` `div` container and `<h2>` elements in it. -->
 
-<hr>
 
 <!-- ### 11. Get Memes form the API ⬇️
 
@@ -188,7 +166,6 @@ npm start
 
 -   [x] Get rid of `const memesArray = allMemeImages.data.memes;` line in our `getRandomImage()` function because new state for `allMeme` is already an _array of `memes` objects_. Update all instances of `memesArray` variable to `allMemes`. -->
 
-<hr>
 
 ### 8. Make App Responsive 🎨
 
@@ -196,7 +173,6 @@ npm start
 
 -   [x] Make App responsive for mobile by adding `media query` . :smiley: -->
 
-<hr>
 
 ### 9. Prepare for Deployment 🪢
 
@@ -206,13 +182,11 @@ npm start
 
 -   [x] Add links to `Live Preview` and _screenshots_ ✅. -->
 
-<hr>
 
 ### 10. Deploy 📤
 
 <!-- -   [x] Use Official Documentation([link](https://create-react-app.dev/docs/deployment/#github-pages)) to push the project to **GitHub Pages** 🎆🎆🎆 -->
 
-<hr>
 <hr>
 
 ## Future Changes ♾️
