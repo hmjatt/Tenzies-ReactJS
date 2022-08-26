@@ -232,7 +232,7 @@ npm start
 
 2. Figma Design
 
-    <!-- - [Meme Generator](https://www.figma.com/file/MoLwFPHNHJVrzdFurxHzNV/Meme-Generator?node-id=0%3A1) -->
+    - [Tenzies](https://www.figma.com/file/FqsxRUhAaXM4ezddQK0CdR/Untitled?node-id=0%3A1)
 
 3. Scrimba
 
