@@ -60,16 +60,13 @@ npm start
 
 -   [x] Initialize the project using `npx create-react-app tenzies` which will create a
     complete **React App** pre-configured and pre-installed with all the dependencies.
-
 -   [x] Import **`Karla`** font from google fonts and apply it to the **`App`** component.
 
 
 ### 2. Organize Project 🗄️
 
 -   [x] Create a `components` folder inside the `src` directory.
-
 -   [x] Create **custom components** inside the `components` folder.
-
 -   [x] Create a `styles` folder inside the `src` directory and add `.css` files inside it.
 
 
@@ -81,11 +78,8 @@ npm start
 ### 4. Dice Component 🧩
 
 -   [ ] Create a **`Dice`** component and basic JSX elements for it.
-
 -   [ ] Add appropriate `className`s to elements in the **`Dice`** component.
-
 -   [ ] Import **`Dice`** component inside `App` component.
-
 -   [ ] Style **`Dice`** and **`App`** component.
 
 
