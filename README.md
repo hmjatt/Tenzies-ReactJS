@@ -58,10 +58,10 @@ npm start
 
 ### 1. Initialize Project 🎍
 
-<!-- -   [x] Initialize the project using `npx create-react-app meme-generator` which will create a
+-   [ ] Initialize the project using `npx create-react-app tenzies` which will create a
         complete **React App** pre-configured and pre-installed with all the dependencies.
 
--   [x] Import **`Karla`** font from google fonts and apply it to the **`App`** component. -->
+-   [ ] Import **`Karla`** font from google fonts and apply it to the **`App`** component.
 
 
 ### 2. Organize Project 🗄️
