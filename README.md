@@ -78,17 +78,15 @@ npm start
 -   [x] Delete **unnecessary** files and code from the directory.
 
 
-### 4. Die Components 🧩
+### 4. Dice Component 🧩
 
-<!-- -   [x] Create a **`Header`** component and basic JSX elements for it.
+-   [ ] Create a **`Dice`** component and basic JSX elements for it.
 
--   [x] Add appropriate `className`s to elements in the `Header` component.
+-   [ ] Add appropriate `className`s to elements in the **`Dice`** component.
 
--   [x] Add `troll-face.png` image to the **`Header`** component.
+-   [ ] Import **`Dice`** component inside `App` component.
 
--   [x] Import **`Header`** component inside `App` component.
-
--   [x] Style **`Header`** and **`App`** component. -->
+-   [ ] Style **`Dice`** and **`App`** component.
 
 
 ### 5. Footer Component 🧩
@@ -113,7 +111,7 @@ npm start
 -   [x] `console.log(url)` for now as our `UI` won't update if we insert the `url` _variable_ inside the **`Meme`** component. Because this has everything to do with the way _react_ deals with updating the `UI` using _variables_. `⚠️ Spoiler Alert!!!: React doesn't just insert every variable that is declared inside our component`. -->
 
 
-### 7. Map Array to Die Components 🪄
+### 7. Map Array to Dice Component 🪄
 
  <!-- -   [x] Save the _random meme URL_ in _state_ and _import the react_ `{ useState }` _hook_.
 
