@@ -58,8 +58,8 @@ npm start
 
 ### 1. Initialize Project 🎍
 
--   [ ] Initialize the project using `npx create-react-app tenzies` which will create a
-        complete **React App** pre-configured and pre-installed with all the dependencies.
+-   [x] Initialize the project using `npx create-react-app tenzies` which will create a
+    complete **React App** pre-configured and pre-installed with all the dependencies.
 
 -   [ ] Import **`Karla`** font from google fonts and apply it to the **`App`** component.
 
