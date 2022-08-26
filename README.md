@@ -75,7 +75,7 @@ npm start
 
 ### 3. Clean Directory🧹
 
-<!-- -   [x] Delete **unnecessary** files and code from the directory. -->
+-   [ ] Delete **unnecessary** files and code from the directory.
 
 
 ### 4. Die Components 🧩
