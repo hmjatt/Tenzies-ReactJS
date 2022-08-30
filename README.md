@@ -137,9 +137,6 @@ npm start
 ### 5. Dice Component 🧩
 
 -   [x] Create a **`Dice`** component and basic JSX elements for it.
-	- Create a Die component that takes a `value` prop
-	- Render 10 instances of the Die component (manually)
- 	- Provide a number between 1-6 for the value on each for now
 -   [x] Add appropriate `className`s to elements in the **`Dice`** component. Code inside `Dice.js` looks like this :-
 	```javascript
 	function Dice(props) {
