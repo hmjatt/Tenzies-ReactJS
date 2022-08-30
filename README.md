@@ -149,7 +149,9 @@ npm start
 	export default Dice;
 	```
 -   [x] Import **`Dice`** component inside `App` component.
+
 -   [x] Style **`Dice`** component by editing `App.css` and add these styles :-
+
 	```css
 	main {
 		background-color: #F5F5F5;
@@ -188,6 +190,9 @@ npm start
 	}
 	/* Dice Component */
 	```
+	Output :-
+	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/step-5-before-dots.png)
+
 -   [ ] CSS Challenge -> Put *Real Dots* on the *Dice*. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
 
 
