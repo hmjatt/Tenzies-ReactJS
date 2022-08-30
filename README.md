@@ -130,13 +130,17 @@ npm start
 		box-shadow: rgba(254, 254, 254, 0.25) 0px 13px 27px -5px, rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
 	}
 	```
-	
+	Output :-
+	![This is an image]()
 
 
 ### 5. Dice Component 🧩
 
 -   [ ] Create a **`Dice`** component and basic JSX elements for it.
--   [ ] Add appropriate `className`s to elements in the **`Dice`** component.
+	- Create a Die component that takes a `value` prop
+	- Render 10 instances of the Die component (manually)
+ 	- Provide a number between 1-6 for the value on each for now
+-   [ ] Add appropriate `className`s to elements in the **`Dice`** component. Code inside `Dice.js` looks like this :-
 -   [ ] Import **`Dice`** component inside `App` component.
 -   [ ] Style **`Dice`** component. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
 
