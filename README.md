@@ -83,7 +83,7 @@ npm start
 -   [x] Add appropriate `className`s to elements in the **`App`** component.
 -   [x] Import **`Dice`** component inside `index.js`. Code inside `index.js` looks like this :-
 
-	```
+	```javascript
 	import React from 'react';
 	import ReactDOM from 'react-dom/client';
 	import './styles/index.css';
