@@ -96,7 +96,42 @@ npm start
 	</React.StrictMode>
 	);
 	```
--   [ ] Style **`App`** component.
+
+-   [x] Add these styles to `index.css` :-
+
+	```css
+	body {
+	margin: 0;
+	background-color: #0B2434;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+	```
+
+-	[x] Style **`App`** component by editing `App.css` and add these styles :-
+
+	```css
+	.App {
+		font-family: "Karla", sans-serif;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}
+
+	main {
+		background-color: #F5F5F5;
+		height: 40em;
+		width: 40em;
+		border-radius: 10px;
+		box-shadow: rgba(254, 254, 254, 0.25) 0px 13px 27px -5px, 
+					rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
+	}
+	```
+	
 
 
 ### 5. Dice Component 🧩
