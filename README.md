@@ -127,8 +127,7 @@ npm start
 		height: 40em;
 		width: 40em;
 		border-radius: 10px;
-		box-shadow: rgba(254, 254, 254, 0.25) 0px 13px 27px -5px, 
-			rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
+		box-shadow: rgba(254, 254, 254, 0.25) 0px 13px 27px -5px, rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
 	}
 	```
 	
