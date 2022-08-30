@@ -131,7 +131,7 @@ npm start
 	}
 	```
 	Output :-
-	![This is an image]()
+	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/step-4.png)
 
 
 ### 5. Dice Component 🧩
