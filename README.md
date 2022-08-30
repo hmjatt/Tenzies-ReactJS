@@ -79,9 +79,23 @@ npm start
 
 ### 4. App Component 🧩
 
--   [ ] Create a **`App`** component and basic JSX elements for it.
--   [ ] Add appropriate `className`s to elements in the **`App`** component.
--   [ ] Import **`Dice`** component inside `index.js`.
+-   [x] Create a **`App`** component and basic JSX elements for it.
+-   [x] Add appropriate `className`s to elements in the **`App`** component.
+-   [x] Import **`Dice`** component inside `index.js`. Code inside `index.js` looks like this :-
+
+	```
+	import React from 'react';
+	import ReactDOM from 'react-dom/client';
+	import './styles/index.css';
+	import App from './App';
+
+	const root = ReactDOM.createRoot(document.getElementById('root'));
+	root.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>
+	);
+	```
 -   [ ] Style **`App`** component.
 
 
