@@ -136,12 +136,22 @@ npm start
 
 ### 5. Dice Component 🧩
 
--   [ ] Create a **`Dice`** component and basic JSX elements for it.
+-   [x] Create a **`Dice`** component and basic JSX elements for it.
 	- Create a Die component that takes a `value` prop
 	- Render 10 instances of the Die component (manually)
  	- Provide a number between 1-6 for the value on each for now
--   [ ] Add appropriate `className`s to elements in the **`Dice`** component. Code inside `Dice.js` looks like this :-
--   [ ] Import **`Dice`** component inside `App` component.
+-   [x] Add appropriate `className`s to elements in the **`Dice`** component. Code inside `Dice.js` looks like this :-
+	```javascript
+	function Dice(props) {
+		return (
+			<div className="dice-face">
+				<h2 className="dice-num">{props.value}</h2>
+			</div>
+		);
+	}
+	export default Dice;
+	```
+-   [x] Import **`Dice`** component inside `App` component.
 -   [ ] Style **`Dice`** component. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
 
 
