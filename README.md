@@ -149,7 +149,46 @@ npm start
 	export default Dice;
 	```
 -   [x] Import **`Dice`** component inside `App` component.
--   [ ] Style **`Dice`** component. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
+-   [x] Style **`Dice`** component by editing `App.css` and add these styles :-
+	```css
+	main {
+		background-color: #F5F5F5;
+		height: 40em;
+		width: 40em;
+		border-radius: 10px;
+		box-shadow: rgba(254, 254, 254, 0.25) 0px 13px 27px -5px, rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.dice-container {
+		display: grid;
+		grid-template: auto auto / repeat(5, 1fr);
+		gap: 20px;
+	}
+
+	/* Dice Component */
+	.dice-face {
+		height: 50px;
+		width: 50px;
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		background-color: white;
+	}
+
+	.dice-num {
+		font-size: 2rem;
+	}
+	/* Dice Component */
+	```
+-   [ ] CSS Challenge -> Put *Real Dots* on the *Dice*. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
 
 
 ### 6. Footer Component 🧩
