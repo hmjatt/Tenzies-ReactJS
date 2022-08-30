@@ -138,7 +138,7 @@ npm start
 -   [ ] Create a **`Dice`** component and basic JSX elements for it.
 -   [ ] Add appropriate `className`s to elements in the **`Dice`** component.
 -   [ ] Import **`Dice`** component inside `App` component.
--   [ ] Style **`Dice`** component.
+-   [ ] Style **`Dice`** component. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
 
 
 ### 6. Footer Component 🧩
