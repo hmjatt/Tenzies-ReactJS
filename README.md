@@ -293,11 +293,9 @@ npm start
 
 ### 6. Footer Component 🧩
 
-<!-- -   [x] Create **`Footer`** component and basic JSX elements for it.
-
--   [x] Import **`Footer`** component inside `App` component.
-
--   [x] Style **`Footer`** component. -->
+-   [ ] Create **`Footer`** component and basic JSX elements for it.
+-   [ ] Import **`Footer`** component inside `App` component.
+-   [ ] Style **`Footer`** component.
 
 
 ### 7. Generate Array of 10 Random Numbers 🔃 
