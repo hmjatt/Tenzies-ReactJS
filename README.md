@@ -117,6 +117,7 @@ npm start
 		font-family: "Karla", sans-serif;
 		text-align: center;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
@@ -293,9 +294,9 @@ npm start
 
 ### 6. Footer Component 🧩
 
--   [ ] Create **`Footer`** component and basic JSX elements for it.
--   [ ] Import **`Footer`** component inside `App` component.
--   [ ] Style **`Footer`** component.
+-   [x] Create **`Footer`** component and basic JSX elements for it.
+-   [x] Import **`Footer`** component inside `App` component.
+-   [x] Style **`Footer`** component.
 
 
 ### 7. Generate Array of 10 Random Numbers 🔃 
@@ -393,7 +394,7 @@ npm start
 
 ## Future Changes ♾️
 
--   [ ] CSS - Put *Real Dots* on the *Dice*.
+-   [x] CSS - Put *Real Dots* on the *Dice*.
 -   [ ] JS - Track Number of *Rolls* it took to win the game.
 -   [ ] JS - Track the *time* it took to win the game.
 -   [ ] JS - Save *Best Time/Rolls* to `localStorage` and try to beat the record.

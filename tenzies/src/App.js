@@ -1,5 +1,6 @@
 import "./styles/App.css";
 import Dice from "./components/Dice";
+import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
 					<Dice value="4" />
 				</div>
         	</main>
+			<Footer />
         </div>
     );
 }
