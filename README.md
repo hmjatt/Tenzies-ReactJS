@@ -348,10 +348,19 @@ npm start
 
 ### 7. Generate Array of 10 Random Numbers 🔃 
 
--   [ ] Write a `allNewDice` function that returns an array of 10 random numbers between 1-6 inclusive.
--   [ ] Log the array of numbers to the console for now.
--   [ ] Code for `allNewDice` function inside **`Dice`** component looks like this :-
-	
+-   [x] Write a `allNewDice` function that returns an array of 10 random numbers between 1-6 inclusive.
+-   [x] Log the array of numbers to the console for now.
+-   [x] Code for `allNewDice` function inside **`App`** component looks like this :-
+	```javascript
+    function allNewDice() {
+        const newDice = []
+        for (let i = 0; i < 10; i++) {
+            newDice.push(Math.ceil(Math.random() * 6))
+        }
+        return newDice
+    }
+    console.log(allNewDice())
+	```
 
 ### 8. Map Array to Dice Component 🪄
 
