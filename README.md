@@ -219,6 +219,76 @@ npm start
 
 -   [x] CSS Challenge -> Put *Real Dots* on the *Dice*. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
 
+	- New code for **`Dice`** component looks like this :- 
+
+	```css
+	/* Dice Component */
+	.dice-face {
+		height: 55px;
+		width: 55px;
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		/* align-items: center; */
+		cursor: pointer;
+		background-color: white;
+		padding: 12%;
+
+	}
+
+	.dice-num {
+		font-size: 2rem;
+	}
+
+	.dot {
+		display: block;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background-color: rgb(50, 50, 50);
+	}
+
+	.dice {
+		width: 2.5em;
+	}
+
+	.first-face {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.second-face,
+	.third-face,
+	.fourth-face,
+	.fifth-face,
+	.sixth-face {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.second-face .dot:nth-of-type(2), .third-face .dot:nth-of-type(3) {
+		align-self: flex-end;
+	}
+
+	.third-face .dot:nth-of-type(1) {
+		align-self: flex-start;
+	}
+
+	.third-face .dot:nth-of-type(2), .fifth-face .column:nth-of-type(2) {
+		align-self: center;
+	}
+
+	.fourth-face .column, .fifth-face .column {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	/* Dice Component */
+	```
+
+
 
 ### 6. Footer Component 🧩
 
