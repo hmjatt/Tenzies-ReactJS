@@ -283,12 +283,11 @@ npm start
 		cursor: pointer;
 		background-color: white;
 		padding: 12%;
-
 	}
 
-	.dice-num {
-		font-size: 2rem;
-	}
+	/* .dice-num {
+	font-size: 2rem;
+	} */
 
 	.dot {
 		display: block;
