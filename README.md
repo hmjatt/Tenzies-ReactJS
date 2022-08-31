@@ -287,7 +287,8 @@ npm start
 	}
 	/* Dice Component */
 	```
-
+	Output :-
+	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/step-5-dots.png)
 
 
 ### 6. Footer Component 🧩
