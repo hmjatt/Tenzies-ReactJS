@@ -151,28 +151,76 @@ npm start
 	```
 -   [x] Import **`Dice`** component inside `App` component.Code inside `App.js` looks like this :-
 	```javascript
-	import Dice from "./components/Dice";
-	function App() {
+	function Dice(props) {
+		const diceValue = parseInt(props.value);
+		let diceSpanEles;
+
+		if(diceValue === 1){
+			diceSpanEles =  <div className="dice first-face" >
+								<span className="dot" style={{backgroundColor: "rgb(255 100 89)"}}> </span>
+							</div>;
+		} else if(diceValue === 2) {
+			diceSpanEles =  <div className="dice second-face">
+								<span className="dot"> </span>
+								<span className="dot"> </span>
+							</div>;
+		} else if(diceValue === 3) {
+			diceSpanEles =  <div className="dice third-face">
+								<span className="dot"></span>
+								<span className="dot"></span>
+								<span className="dot"></span>
+							</div>;		
+		} else if(diceValue === 4) {
+			diceSpanEles =  <div className="fourth-face dice">
+								<div className="column">
+									<span className="dot"></span>
+									<span className="dot"></span>
+								</div>
+								<div className="column">
+									<span className="dot"></span>
+									<span className="dot"></span>
+								</div>
+							</div>		
+		} else if(diceValue === 5) {
+			diceSpanEles =  <div className="fifth-face dice">
+								<div className="column">
+									<span className="dot"></span>
+									<span className="dot"></span>
+								</div>
+								
+								<div className="column">
+									<span className="dot"></span>
+								</div>
+								
+								<div className="column">
+									<span className="dot"></span>
+									<span className="dot"></span>
+								</div>
+							</div>		
+		} else if(diceValue === 6) {
+			diceSpanEles =  <div className="fourth-face dice">
+								<div className="column">
+									<span className="dot"></span>
+									<span className="dot"></span>
+									<span className="dot"></span>
+								</div>
+								<div className="column">
+									<span className="dot"></span>
+									<span className="dot"></span>
+									<span className="dot"></span>
+								</div>
+							</div>		
+		} else {
+			diceSpanEles = <h2 className="die-num">{props.value}</h2>;
+		}
+
 		return (
-			<div className="App">
-				<main>
-					<div className="dice-container">
-						<Dice value="1" />
-						<Dice value="2" />
-						<Dice value="3" />
-						<Dice value="4" />
-						<Dice value="5" />
-						<Dice value="6" />
-						<Dice value="1" />
-						<Dice value="2" />
-						<Dice value="3" />
-						<Dice value="4" />
-					</div>
-				</main>
+			<div className="dice-face">
+				{diceSpanEles}
 			</div>
 		);
 	}
-	export default App;
+	export default Dice;
 	```
 
 -   [x] Style **`Dice`** component by editing `App.css` and add these styles :-
@@ -300,16 +348,6 @@ npm start
 
 
 ### 7. Generate Array of 10 Random Numbers 🔃 
-
-<!-- -   [x] Change `<form>` to `<div>` inside the **`Meme`** component as we don't need to submit our _form_ instead just get a `meme image`.
-
--   [x] Create a `memesData.js` inside the `data` folder which is an _object of 100 most popular meme images_ returned after making an _API request_ to `imgflip API`.
-
--   [x] Import `memesData.js` as `memesData` _object_ inside the **`Meme`** component.
-
--   [x] Select a _random meme image's_ `url` property, `console.log(url)` using `onClick={getRandomImage}` _react mouse event property_ when `Get a new meme image 🖼️` _button_ is clicked.
-
--   [x] `console.log(url)` for now as our `UI` won't update if we insert the `url` _variable_ inside the **`Meme`** component. Because this has everything to do with the way _react_ deals with updating the `UI` using _variables_. `⚠️ Spoiler Alert!!!: React doesn't just insert every variable that is declared inside our component`. -->
 
 
 ### 8. Map Array to Dice Component 🪄
