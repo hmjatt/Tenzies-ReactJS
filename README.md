@@ -81,7 +81,7 @@ npm start
 
 -   [x] Create a **`App`** component and basic JSX elements for it.
 -   [x] Add appropriate `className`s to elements in the **`App`** component.
--   [x] Import **`Dice`** component inside `index.js`. Code inside `index.js` looks like this :-
+-   [x] Import **`App`** component inside `index.js`. Code inside `index.js` looks like this :-
 
 	```javascript
 	import React from 'react';
@@ -138,7 +138,48 @@ npm start
 ### 5. Dice Component 🧩
 
 -   [x] Create a **`Dice`** component and basic JSX elements for it.
--   [x] Add appropriate `className`s to elements in the **`Dice`** component. Code inside `Dice.js` looks like this :-
+-   [x] Add appropriate `className`s to elements in the **`Dice`** component. 
+	- Update code inside `App.js` and it should look like this :-
+
+		```javascript
+		import "./styles/App.css";
+		import Dice from "./components/Dice";
+		import Footer from "./components/Footer";
+
+		function App() {
+			function allNewDice() {
+				const newDice = []
+				for (let i = 0; i < 10; i++) {
+					newDice.push(Math.ceil(Math.random() * 6))
+				}
+				return newDice
+			}
+			console.log(allNewDice())
+			return (
+				<div className="App">
+					<main>
+						<div className="dice-container">
+							<Dice value="1" />
+							<Dice value="2" />
+							<Dice value="3" />
+							<Dice value="4" />
+							<Dice value="5" />
+							<Dice value="6" />
+							<Dice value="1" />
+							<Dice value="2" />
+							<Dice value="3" />
+							<Dice value="4" />
+						</div>
+					</main>
+					<Footer />
+				</div>
+			);
+		}
+		export default App;
+		```
+
+	- Code inside `Dice.js` looks like this :-
+
 	```javascript
 	function Dice(props) {
 		return (
@@ -149,7 +190,148 @@ npm start
 	}
 	export default Dice;
 	```
--   [x] Import **`Dice`** component inside `App` component.Code inside `App.js` looks like this :-
+
+-   [x] Style **`Dice`** component by editing `App.css` and add these styles :-
+
+	```css
+	main {
+		background-color: #F5F5F5;
+		height: 40em;
+		width: 40em;
+		border-radius: 10px;
+		box-shadow: rgba(254, 254, 254, 0.25) 0px 13px 27px -5px, rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.dice-container {
+		display: grid;
+		grid-template: auto auto / repeat(5, 1fr);
+		gap: 20px;
+	}
+
+	/* Dice Component */
+	.dice-face {
+		height: 50px;
+		width: 50px;
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		background-color: white;
+	}
+
+	.dice-num {
+		font-size: 2rem;
+	}
+	/* Dice Component */
+	```
+	Output :-
+	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/step-5-before-dots.png)
+
+
+### 6. Footer Component 🧩
+
+-   [x] Create **`Footer`** component and basic JSX elements for it.
+-   [x] Import **`Footer`** component inside `App` component.
+-   [x] Style **`Footer`** component.
+
+
+### 7. Generate Array of 10 Random Numbers 🔃 
+
+-   [x] Write a `allNewDice` function that returns an array of 10 random numbers between 1-6 inclusive.
+-   [x] Log the array of numbers to the console for now.
+-   [x] Code for `allNewDice` function inside **`App`** component looks like this :-
+	```javascript
+    function allNewDice() {
+        const newDice = []
+        for (let i = 0; i < 10; i++) {
+            newDice.push(Math.ceil(Math.random() * 6))
+        }
+        return newDice
+    }
+    console.log(allNewDice())
+	```
+
+### 8. CSS Challenge - Replace *Numbers* with *Dots*
+
+-   [x] CSS Challenge -> Put *Real Dots* on the *Dice*. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
+
+-   [x] Update styles for **`Dice`** component in `App.css` and it should look like this :- 
+
+	```css
+	/* Dice Component */
+	.dice-face {
+		height: 55px;
+		width: 55px;
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		/* align-items: center; */
+		cursor: pointer;
+		background-color: white;
+		padding: 12%;
+	}
+
+	/* .dice-num {
+	font-size: 2rem;
+	} */
+
+	.dot {
+		display: block;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background-color: rgb(50, 50, 50);
+	}
+
+	.dice {
+		width: 2.5em;
+	}
+
+	.first-face {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.second-face,
+	.third-face,
+	.fourth-face,
+	.fifth-face,
+	.sixth-face {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.second-face .dot:nth-of-type(2), .third-face .dot:nth-of-type(3) {
+		align-self: flex-end;
+	}
+
+	.third-face .dot:nth-of-type(1) {
+		align-self: flex-start;
+	}
+
+	.third-face .dot:nth-of-type(2), .fifth-face .column:nth-of-type(2) {
+		align-self: center;
+	}
+
+	.fourth-face .column, .fifth-face .column {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	/* Dice Component */
+	```
+
+-   [x] Update code for **`Dice`** component in `Dice.js` and it should look like this :-
+
 	```javascript
 	function Dice(props) {
 		const diceValue = parseInt(props.value);
@@ -223,146 +405,10 @@ npm start
 	export default Dice;
 	```
 
--   [x] Style **`Dice`** component by editing `App.css` and add these styles :-
-
-	```css
-	main {
-		background-color: #F5F5F5;
-		height: 40em;
-		width: 40em;
-		border-radius: 10px;
-		box-shadow: rgba(254, 254, 254, 0.25) 0px 13px 27px -5px, rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
-		padding: 20px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.dice-container {
-		display: grid;
-		grid-template: auto auto / repeat(5, 1fr);
-		gap: 20px;
-	}
-
-	/* Dice Component */
-	.dice-face {
-		height: 50px;
-		width: 50px;
-		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-		border-radius: 10px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
-		background-color: white;
-	}
-
-	.dice-num {
-		font-size: 2rem;
-	}
-	/* Dice Component */
-	```
-	Output :-
-	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/step-5-before-dots.png)
-
--   [x] CSS Challenge -> Put *Real Dots* on the *Dice*. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
-
-	- New code for **`Dice`** component looks like this :- 
-
-	```css
-	/* Dice Component */
-	.dice-face {
-		height: 55px;
-		width: 55px;
-		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-		border-radius: 10px;
-		display: flex;
-		justify-content: center;
-		/* align-items: center; */
-		cursor: pointer;
-		background-color: white;
-		padding: 12%;
-	}
-
-	/* .dice-num {
-	font-size: 2rem;
-	} */
-
-	.dot {
-		display: block;
-		width: 12px;
-		height: 12px;
-		border-radius: 50%;
-		background-color: rgb(50, 50, 50);
-	}
-
-	.dice {
-		width: 2.5em;
-	}
-
-	.first-face {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.second-face,
-	.third-face,
-	.fourth-face,
-	.fifth-face,
-	.sixth-face {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.second-face .dot:nth-of-type(2), .third-face .dot:nth-of-type(3) {
-		align-self: flex-end;
-	}
-
-	.third-face .dot:nth-of-type(1) {
-		align-self: flex-start;
-	}
-
-	.third-face .dot:nth-of-type(2), .fifth-face .column:nth-of-type(2) {
-		align-self: center;
-	}
-
-	.fourth-face .column, .fifth-face .column {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-	/* Dice Component */
-	```
 	Output :-
 	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/step-5-dots.png)
 
-
-### 6. Footer Component 🧩
-
--   [x] Create **`Footer`** component and basic JSX elements for it.
--   [x] Import **`Footer`** component inside `App` component.
--   [x] Style **`Footer`** component.
-
-
-### 7. Generate Array of 10 Random Numbers 🔃 
-
--   [x] Write a `allNewDice` function that returns an array of 10 random numbers between 1-6 inclusive.
--   [x] Log the array of numbers to the console for now.
--   [x] Code for `allNewDice` function inside **`App`** component looks like this :-
-	```javascript
-    function allNewDice() {
-        const newDice = []
-        for (let i = 0; i < 10; i++) {
-            newDice.push(Math.ceil(Math.random() * 6))
-        }
-        return newDice
-    }
-    console.log(allNewDice())
-	```
-
-### 8. Map Array to Dice Component 🪄
+### 9. Map Array to Dice Component 🪄
 
  <!-- -   [x] Save the _random meme URL_ in _state_ and _import the react_ `{ useState }` _hook_.
 
@@ -375,7 +421,7 @@ npm start
 -   [x] Style newly created `<img />` element. -->
 
 
-### 9. Roll Dice Button
+### 10. Roll Dice Button
 
  <!-- -   [x] Update our _state_ to save the meme-related data as an object called `meme`. It should have the following _3 properties_: `topText, bottomText, randomImage`.
 
@@ -386,7 +432,7 @@ npm start
 -   [x] Lastly, update the `getMemeImage` function and the markup to reflect our newly reformed state object and array in the correct way -->
 
 
-### 10. Change Dice to Objects
+### 11. Change Dice to Objects
 
  <!-- -   [x] Update `topText` element to have a `value={meme.topText}`, `name="topText"` and an `onChange={handleChange}` event handler which will run `{handleChange}` _function_ on each key press. On each key press our state changes and _React_ re-renders our component and is in charge of maintaining the state.
 
@@ -403,7 +449,7 @@ npm start
 -   [x] Style `className=meme` `div` container and `<h2>` elements in it.  -->
 
 
-### 11. Styling Held Dice
+### 12. Styling Held Dice
 
 <!-- -   [x] Update _state variable_ called `allMemeImages` to `const [allMemes, setAllMemes] = React.useState([])`, where _default state_ is an empty array.
 
@@ -413,20 +459,20 @@ npm start
 
 -   [x] Get rid of `const memesArray = allMemeImages.data.memes;` line in our `getRandomImage()` function because new state for `allMeme` is already an _array of `memes` objects_. Update all instances of `memesArray` variable to `allMemes`. -->
 
-### 12. Hold Dice
+### 13. Hold Dice
 
-### 13. End Game
+### 14. End Game
 
-### 14. New Game
+### 15. New Game
 
-### 15. Make App Responsive 🎨
+### 16. Make App Responsive 🎨
 
 <!-- -   [x] Change _Absolute_ units to _Relative_.
 
 -   [x] Make App responsive for mobile by adding `media query` . :smiley: -->
 
 
-### 16. Prepare for Deployment 🪢
+### 17. Prepare for Deployment 🪢
 
 <!-- -   [x] Delete **unnecessary** files from directory and format code with `Prettier`.
 
@@ -435,7 +481,7 @@ npm start
 -   [x] Add links to `Live Preview` and _screenshots_ ✅. -->
 
 
-### 17. Deploy 📤
+### 18. Deploy 📤
 
 <!-- -   [x] Use Official Documentation([link](https://create-react-app.dev/docs/deployment/#github-pages)) to push the project to **GitHub Pages** 🎆🎆🎆 -->
 
