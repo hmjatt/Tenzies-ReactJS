@@ -3,6 +3,8 @@ import Dice from "./components/Dice";
 import Footer from "./components/Footer";
 
 function App() {
+	const [dice, setDice] = React.useState(allNewDice())
+
 	function allNewDice() {
         const newDice = []
         for (let i = 0; i < 10; i++) {
