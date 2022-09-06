@@ -1,35 +1,29 @@
+import { useState } from "react";
 import "./styles/App.css";
 import Dice from "./components/Dice";
 import Footer from "./components/Footer";
 
 function App() {
-	const [dice, setDice] = React.useState(allNewDice())
+    const [dice, setDice] = useState(allNewDice());
 
-	function allNewDice() {
-        const newDice = []
+    function allNewDice() {
+        const newDice = [];
         for (let i = 0; i < 10; i++) {
-            newDice.push(Math.ceil(Math.random() * 6))
+            newDice.push(Math.ceil(Math.random() * 6));
         }
-        return newDice
+        return newDice;
     }
-    console.log(allNewDice())
+
+    const diceElements = dice.map((dice) => <Dice value={dice} />);
+
     return (
         <div className="App">
-			<main>
-				<div className="dice-container">
-					<Dice value="1" />
-					<Dice value="2" />
-					<Dice value="3" />
-					<Dice value="4" />
-					<Dice value="5" />
-					<Dice value="6" />
-					<Dice value="1" />
-					<Dice value="2" />
-					<Dice value="3" />
-					<Dice value="4" />
-				</div>
-        	</main>
-			<Footer />
+            return (
+            <main>
+                <div className="dice-container">{diceElements}</div>
+            </main>
+            )
+            <Footer />
         </div>
     );
 }
