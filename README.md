@@ -412,9 +412,9 @@ npm start
 
 ### 9. Map Array to Dice Component 🪄
 
--   [ ]  Create state to hold our array of numbers. (Initialize the state by calling our `allNewDice` function so it loads all new dice as soon as the app loads).
+-   [ ]  Create a *state* inside **`App`** component to hold our *array of numbers*(Initialize the state by calling our `allNewDice` function so it loads all new dice as soon as the app loads).
 
--   [ ] Map over the state numbers array to generate our array of Die elements and render those in place of our manually-written 10 Die elements.
+-   [ ] Map over the *state numbers array* to generate our array of `diceElements` and render those in place of our manually-written *10 Dice elements*.
 
 -   [ ] React will show the following warning, we will fix it in the future(Ignore this for now) :-
 
