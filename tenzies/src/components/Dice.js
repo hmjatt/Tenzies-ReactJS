@@ -58,7 +58,7 @@ function Dice(props) {
 							</div>
 						</div>		
 	} else {
-		diceSpanEles = <h2 className="die-num">{props.value}</h2>;
+		diceSpanEles = <h2 className="dice-num">{props.value}</h2>;
 	}
 
     return (

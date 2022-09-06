@@ -258,6 +258,7 @@ npm start
     console.log(allNewDice())
 	```
 
+
 ### 8. CSS Challenge - Replace *Numbers* with *Dots*
 
 -   [x] CSS Challenge -> Put *Real Dots* on the *Dice*. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
@@ -408,17 +409,14 @@ npm start
 	Output :-
 	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/step-5-dots.png)
 
+
 ### 9. Map Array to Dice Component 🪄
 
- <!-- -   [x] Save the _random meme URL_ in _state_ and _import the react_ `{ useState }` _hook_.
+-   [ ]  Create state to hold our array of numbers. (Initialize the state by calling our `allNewDice` function so it loads all new dice as soon as the app loads).
 
--   [x] Create a new _state_ called `memeImage` with an empty string as default.
+-   [ ] Map over the state numbers array to generate our array of Die elements and render those in place of our manually-written 10 Die elements.
 
--   [x] When the `getMemeImage` function is called, update the `memeImage` _state_ to be the _random image URL_
-
--   [x] Below the `div.form`, add an `<img />` element and set the src to the new `memeImage` state we created.
-
--   [x] Style newly created `<img />` element. -->
+-   [ ] React will show the following warning, we will fix it in the future(Ignore this for now) :-
 
 
 ### 10. Roll Dice Button
