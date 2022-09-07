@@ -439,13 +439,13 @@ npm start
     const [dice, setDice] = useState(allNewDice());
     ```
 
--   [ ] Map over the _state numbers array_ to generate our array of `diceElements` and render those in place of our manually-written _10 Dice elements_.
+-   [x] Map over the _state numbers array_ to generate our array of `diceElements` and render those in place of our manually-written _10 Dice elements_.
 
     ```javascript
     const diceElements = dice.map((dice) => <Dice value={dice} />);
     ```
 
--   [ ] React will show the following warning, we will fix it in the future(Ignore this for now) :-
+-   [x] React will show the following warning, we will fix it in the future(Ignore this for now) `Warning ⚠️ : Each child in a list should have a unique "key" prop.`
 
 ### 10. Roll Dice Button
 

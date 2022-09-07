@@ -18,11 +18,9 @@ function App() {
 
     return (
         <div className="App">
-            return (
             <main>
                 <div className="dice-container">{diceElements}</div>
             </main>
-            )
             <Footer />
         </div>
     );
