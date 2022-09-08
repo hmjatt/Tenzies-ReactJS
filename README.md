@@ -449,13 +449,11 @@ npm start
 
 ### 10. Roll Dice Button
 
- <!-- -   [x] Update our _state_ to save the meme-related data as an object called `meme`. It should have the following _3 properties_: `topText, bottomText, randomImage`.
+-   [ ] Create a `Roll Dice` button that will re-roll all 10 dice.
 
--   [x] The _2 text states_ can default to empty strings for now, and `randomImage` should default to `"http://i.imgflip.com/1bij.jpg"`
 
--   [x] Next, create a _new state variable_ called `allMemeImages` which will default to `memesData`, which we imported at the top of `Meme.js`
+-   [ ] Clicking the button should generate a new array of numbers and set the `dice` state to that new array (thus re-rendering the array to the page)
 
--   [x] Lastly, update the `getMemeImage` function and the markup to reflect our newly reformed state object and array in the correct way -->
 
 ### 11. Change Dice to Objects
 
