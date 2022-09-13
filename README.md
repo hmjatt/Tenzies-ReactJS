@@ -449,11 +449,21 @@ npm start
 
 ### 10. Roll Dice Button 🎢
 
--   [x] Create a `Roll` dice button that will re-roll all 10 dice.
+-   [x] Create a `Roll` dice button inside **`App`** component that will re-roll all 10 dice.
 
--   [x] Clicking the `Roll` dice button should generate a new array of numbers and set the `dice` state to that new array (thus re-rendering the array to the page)
+	```html
+	<button className="roll-dice" onClick={rollDice}>Roll</button> 
+	```
 
--   [ ] Style `Roll` dice button using *styles* from *figma design template*. Add these styles to `App.css` :-
+-   [x] Clicking the `Roll` dice button runs `rollDice()` function, which should generate a new array of numbers and set the `dice` state to that new array (thus re-rendering the array to the page).
+
+	```js
+	function rollDice() {
+		setDice(allNewDice())
+	}
+	```
+
+-   [x] Style `Roll` dice button using *styles* from *figma design template*. Add these styles to `App.css` :-
 
 	```css
 	.roll-dice {
@@ -480,19 +490,12 @@ npm start
 
 ### 11. Change Dice to Objects
 
- <!-- -   [x] Update `topText` element to have a `value={meme.topText}`, `name="topText"` and an `onChange={handleChange}` event handler which will run `{handleChange}` _function_ on each key press. On each key press our state changes and _React_ re-renders our component and is in charge of maintaining the state.
+<!-- -   [ ] Challenge: Update the array of numbers in state to be an array of objects instead. Each object should look like: `{ value: <random number>, isHeld: false }`.
 
--   [x] Update `bottomText` element to have a `value={meme.bottomText}`, `name="bottomText"` and an `onChange={handleChange}` event handler which will run `{handleChange}` _function_ on each key press. On each key press our state changes and _React_ re-renders our component and is in charge of maintaining the state.
+-   [ ] Making this change will break parts of our code, so make sure to update things so we're back to a working state. -->
 
--   [x] Create a `handleChange` _function_, use _Destructuring assignment(ES6)_ to return a new object i.e., -> `const [name, value] = event.target`. While keeping the old _object(state)_ intact create a new _object(state)_ by using the spread operator `...prevState`.
+<!-- -   [x] Update `bottomText` element to have a `value={meme.bottomText}`, `name="bottomText"` and an `onChange={handleChange}` event handler which will run `{handleChange}` _function_ on each key press. On each key press our state changes and _React_ re-renders our component and is in charge of maintaining the state. -->
 
--   [x] Override the specific property `[name]: value` using _previous state_ and _arrow functions_. Making use of _Computed Properties(ES6)_ allows us to turn a _dynamic string(Something Stored in a Variable)_ and use it as the property name for our _Object_.
-
--   [x] Create a `div` with `className=meme` containing `meme-image` and two `<h2>` elements, which will used to show text on top of our `meme-image`.
-
--   [x] Update our `<h2>` elements by using _values_ stored in `{meme.topText}, {meme.bottomText}` _keys_ inside our _meme Object_.
-
--   [x] Style `className=meme` `div` container and `<h2>` elements in it.  -->
 
 ### 12. Styling Held Dice
 
