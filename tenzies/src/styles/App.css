@@ -1,3 +1,4 @@
+/* App Component */
 .App {
 	font-family: "Karla", sans-serif;
 	text-align: center;
@@ -26,6 +27,30 @@ main {
 	grid-template: auto auto / repeat(5, 1fr);
 	gap: 20px;
 }
+
+.roll-dice {
+	margin-top: 2em;
+	height: 50px;
+	width: 100px;
+	border: none;
+	border-radius: 6px;
+	background-color: #5035FF;
+	color: white;
+	font-size: 1.2rem;
+	font-family: 'Karla', sans-serif;
+	cursor: pointer;
+}
+
+.roll-dice:focus {
+	outline: none;
+}
+
+.roll-dice:active {
+	box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+/* App Component */
+
 
 /* Dice Component */
 .dice-face {
@@ -73,7 +98,8 @@ main {
 	justify-content: space-between;
 }
 
-.second-face .dot:nth-of-type(2), .third-face .dot:nth-of-type(3) {
+.second-face .dot:nth-of-type(2),
+.third-face .dot:nth-of-type(3) {
 	align-self: flex-end;
 }
 
@@ -81,15 +107,18 @@ main {
 	align-self: flex-start;
 }
 
-.third-face .dot:nth-of-type(2), .fifth-face .column:nth-of-type(2) {
+.third-face .dot:nth-of-type(2),
+.fifth-face .column:nth-of-type(2) {
 	align-self: center;
 }
 
-.fourth-face .column, .fifth-face .column {
+.fourth-face .column,
+.fifth-face .column {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
+
 /* Dice Component */
 
 /* Footer Component */

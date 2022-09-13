@@ -449,10 +449,34 @@ npm start
 
 ### 10. Roll Dice Button
 
--   [x] Create a `Roll Dice` button that will re-roll all 10 dice.
+-   [x] Create a `Roll` dice button that will re-roll all 10 dice.
 
--   [x] Clicking the `Roll` button should generate a new array of numbers and set the `dice` state to that new array (thus re-rendering the array to the page)
+-   [x] Clicking the `Roll` dice button should generate a new array of numbers and set the `dice` state to that new array (thus re-rendering the array to the page)
 
+-   [ ] Style `Roll` dice button using *styles* from *figma design template*. Add these styles to `App.css` :-
+
+	```css
+	.roll-dice {
+		margin-top: 2em;
+		height: 50px;
+		width: 100px;
+		border: none;
+		border-radius: 6px;
+		background-color: #5035FF;
+		color: white;
+		font-size: 1.2rem;
+		font-family: 'Karla', sans-serif;
+		cursor: pointer;
+	}
+
+	.roll-dice:focus {
+		outline: none;
+	}
+
+	.roll-dice:active {
+		box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+	}
+	```
 
 ### 11. Change Dice to Objects
 
