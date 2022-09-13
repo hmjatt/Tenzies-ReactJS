@@ -488,11 +488,11 @@ npm start
 	}
 	```
 
-### 11. Change Dice to Objects
+### 11. Change Dice to Objects 🪢
 
-<!-- -   [ ] Challenge: Update the array of numbers in state to be an array of objects instead. Each object should look like: `{ value: <random number>, isHeld: false }`.
+-   [ ] Challenge: Update the array of numbers in state to be an array of objects instead. Each object should look like: `{ value: <random number>, isHeld: false }`.
 
--   [ ] Making this change will break parts of our code, so make sure to update things so we're back to a working state. -->
+-   [ ] Making this change will break parts of our code, so make sure to update things so we're back to a working state.
 
 <!-- -   [x] Update `bottomText` element to have a `value={meme.bottomText}`, `name="bottomText"` and an `onChange={handleChange}` event handler which will run `{handleChange}` _function_ on each key press. On each key press our state changes and _React_ re-renders our component and is in charge of maintaining the state. -->
 
