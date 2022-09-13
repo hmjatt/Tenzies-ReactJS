@@ -259,7 +259,7 @@ npm start
     console.log(allNewDice());
     ```
 
-### 8. CSS Challenge - Replace _Numbers_ with _Dots_
+### 8. CSS Challenge - Replace _Numbers_ with _Dots_ 🔢
 
 -   [x] CSS Challenge -> Put _Real Dots_ on the _Dice_. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
 
@@ -425,7 +425,7 @@ npm start
     Output :-
     ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/step-5-dots.png)
 
-### 9. Map Array to Dice Component 🪄
+### 9. Map Array to Dice Component 🗺️
 
 -   [x] Import `useState` hook from react using :-
 
@@ -447,7 +447,7 @@ npm start
 
 -   [x] React will show the following warning, we will fix it in the future(Ignore this for now) `Warning ⚠️ : Each child in a list should have a unique "key" prop.`
 
-### 10. Roll Dice Button
+### 10. Roll Dice Button 🎢
 
 -   [x] Create a `Roll` dice button that will re-roll all 10 dice.
 
