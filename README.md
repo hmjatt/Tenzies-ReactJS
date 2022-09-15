@@ -490,9 +490,22 @@ npm start
 
 ### 11. Change Dice to Objects 🪢
 
--   [ ] Update the array of numbers in state to be an array of objects instead. Each object should look like: `{ value: <random number>, isHeld: false }`.
+-   [ ] Inside **`App`** component, update the array of numbers in state to be an array of objects instead. Each object should look like: `{ value: <random number>, isHeld: false }`. Updated `allNewDice()` function looks something like this :-
 
--   [ ] Making this change will break parts of our code, so make sure to update things so we're back to a working state.
+	```js
+		function allNewDice() {
+			const newDice = []
+			for (let i = 0; i < 10; i++) {
+				newDice.push({
+					value: Math.ceil(Math.random() * 6), 
+					isHeld: false
+				})
+			}
+			return newDice
+		}
+	``` 
+
+-   [ ] Making this change will break parts of our code, so we need to update `diceElement` variable and access the `value` *key* from our `array of objects`. Updated `diceElements` variable looks something like this :-
 
 <!-- -   [x] Update `bottomText` element to have a `value={meme.bottomText}`, `name="bottomText"` and an `onChange={handleChange}` event handler which will run `{handleChange}` _function_ on each key press. On each key press our state changes and _React_ re-renders our component and is in charge of maintaining the state. -->
 
