@@ -511,7 +511,29 @@ npm start
 	const diceElements = dice.map((dice) => <Dice value={dice.value} />);
 	```
 
-<!-- -   [x] Update `bottomText` element to have a `value={meme.bottomText}`, `name="bottomText"` and an `onChange={handleChange}` event handler which will run `{handleChange}` _function_ on each key press. On each key press our state changes and _React_ re-renders our component and is in charge of maintaining the state. -->
+-   [x] Let's fix this warning -> `Warning ⚠️ : Each child in a list should have a unique "key" prop.`, by using a *npm package* `nanoid` which lets us *generate unique ID's* on the fly. Here are the code changes we need to **`App`** component to make this work :-
+
+	- Import `nanoid` package at the top of `App.js` :
+
+	```js
+	import { nanoid } from "nanoid";
+	```
+
+	- Create an `id` property and assign `nanoid()` function as it's value :
+
+	```js
+	value: Math.ceil(Math.random() * 6),
+	isHeld: false,
+	id: nanoid()
+	```
+
+	- Assign the `key` *prop* the value of `id`:
+
+	```js
+	const diceElements = dice.map((dice) => (
+		<Dice key={dice.id} value={dice.value} />
+    ));
+	```
 
 
 ### 12. Styling Held Dice

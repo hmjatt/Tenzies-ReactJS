@@ -13,7 +13,7 @@ function App() {
             newDice.push({
                 value: Math.ceil(Math.random() * 6),
                 isHeld: false,
-                id: nanoid(),
+                id: nanoid()
             });
         }
         return newDice;
