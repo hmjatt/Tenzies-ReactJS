@@ -490,22 +490,26 @@ npm start
 
 ### 11. Change Dice to Objects 🪢
 
--   [ ] Inside **`App`** component, update the array of numbers in state to be an array of objects instead. Each object should look like: `{ value: <random number>, isHeld: false }`. Updated `allNewDice()` function looks something like this :-
+-   [x] Inside **`App`** component, update the array of numbers in state to be an array of objects instead. Each object should look like: `{ value: <random number>, isHeld: false }`. Updated `allNewDice()` function looks something like this :-
 
 	```js
-		function allNewDice() {
-			const newDice = []
-			for (let i = 0; i < 10; i++) {
-				newDice.push({
-					value: Math.ceil(Math.random() * 6), 
-					isHeld: false
-				})
-			}
-			return newDice
+	function allNewDice() {
+		const newDice = []
+		for (let i = 0; i < 10; i++) {
+			newDice.push({
+				value: Math.ceil(Math.random() * 6), 
+				isHeld: false
+			})
 		}
+		return newDice
+	}
 	``` 
 
--   [ ] Making this change will break parts of our code, so we need to update `diceElement` variable and access the `value` *key* from our `array of objects`. Updated `diceElements` variable looks something like this :-
+-   [x] Making this change will break parts of our code, so we need to update `diceElement` variable and access the `value` *key* from our `array of objects`. Updated `diceElements` variable looks something like this :-
+
+	```js
+	const diceElements = dice.map((dice) => <Dice value={dice.value} />);
+	```
 
 <!-- -   [x] Update `bottomText` element to have a `value={meme.bottomText}`, `name="bottomText"` and an `onChange={handleChange}` event handler which will run `{handleChange}` _function_ on each key press. On each key press our state changes and _React_ re-renders our component and is in charge of maintaining the state. -->
 

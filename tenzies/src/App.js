@@ -7,18 +7,21 @@ function App() {
     const [dice, setDice] = useState(allNewDice());
 
     function allNewDice() {
-        const newDice = [];
+        const newDice = []
         for (let i = 0; i < 10; i++) {
-            newDice.push(Math.ceil(Math.random() * 6));
+            newDice.push({
+                value: Math.ceil(Math.random() * 6), 
+                isHeld: false
+            })
         }
-        return newDice;
+        return newDice
     }
 
 	function rollDice() {
         setDice(allNewDice())
     }
 
-    const diceElements = dice.map((dice) => <Dice value={dice} />);
+    const diceElements = dice.map((dice) => <Dice value={dice.value} />);
 
     return (
         <div className="App">
