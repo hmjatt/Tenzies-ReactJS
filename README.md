@@ -511,7 +511,7 @@ npm start
 	const diceElements = dice.map((dice) => <Dice value={dice.value} />);
 	```
 
--   [x] Let's fix this warning -> `Warning ⚠️ : Each child in a list should have a unique "key" prop.`, by using a *npm package* `nanoid` which lets us *generate unique ID's* on the fly. Here are the code changes we need to **`App`** component to make this work :-
+-   [x] Let's fix this warning -> `Warning ⚠️ : Each child in a list should have a unique "key" prop.`, by using a *npm package* `nanoid` which lets us *generate unique ID's* on the fly. Here are the code changes we need to make to the **`App`** component to make this work :-
 
 	- Import `nanoid` package at the top of `App.js` :
 
