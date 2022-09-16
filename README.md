@@ -538,13 +538,10 @@ npm start
 
 ### 12. Styling Held Dice
 
-<!-- -   [x] Update _state variable_ called `allMemeImages` to `const [allMemes, setAllMemes] = React.useState([])`, where _default state_ is an empty array.
+-   [ ] Add conditional styling to the Die component so that if it's held (isHeld === true), its background color changes to a light green (#59E391)
 
--   [x] Using _Effect Hook(`useEffect`)_, as soon as the **`Meme component`** loads the first time, make an API call to "https://api.imgflip.com/get_memes".
+-   [ ] Remember: currently the Die component has no way of knowing if it's "held" or not.
 
--   [x] When the data comes in, save just the memes array part of that data to the `allMemes` state.
-
--   [x] Get rid of `const memesArray = allMemeImages.data.memes;` line in our `getRandomImage()` function because new state for `allMeme` is already an _array of `memes` objects_. Update all instances of `memesArray` variable to `allMemes`. -->
 
 ### 13. Hold Dice
 
