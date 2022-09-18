@@ -535,7 +535,7 @@ npm start
     ));
     ```
 
-### 12. Styling Held Dice
+### 12. Styling Held Dice 🎨
 
 -   [x] Pass a `isHeld` prop inside **`App`** component, in `diceElement` when rendering our **`Dice`** component.
 
