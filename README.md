@@ -538,7 +538,14 @@ npm start
 
 ### 12. Styling Held Dice
 
--   [ ] Add conditional styling to the Die component so that if it's held (isHeld === true), its background color changes to a light green (#59E391)
+-   [x] Pass a `isHeld` prop inside **`App`** component, in `diceElement` when rendering our **`Dice`** component. 
+	```js
+	const diceElements = dice.map((dice) => (
+        <Dice key={dice.id} value={dice.value} isHeld={dice.isHeld} />
+    ));
+	```
+
+-   [ ] Add conditional styling to the **`Dice`** component so that if it's *isheld prop is true* `(isHeld === true)`, its *background color* changes to a light green `(#59E391)`.
 
 -   [ ] Remember: currently the Die component has no way of knowing if it's "held" or not.
 

@@ -24,7 +24,7 @@ function App() {
     }
 
     const diceElements = dice.map((dice) => (
-        <Dice key={dice.id} value={dice.value} />
+        <Dice key={dice.id} value={dice.value} isHeld={dice.isHeld} />
     ));
 
     return (
