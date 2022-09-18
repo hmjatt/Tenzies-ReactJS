@@ -451,115 +451,113 @@ npm start
 
 -   [x] Create a `Roll` dice button inside **`App`** component that will re-roll all 10 dice.
 
-	```html
-	<button className="roll-dice" onClick={rollDice}>Roll</button> 
-	```
+    ```html
+    <button className="roll-dice" onClick="{rollDice}">Roll</button>
+    ```
 
 -   [x] Clicking the `Roll` dice button runs `rollDice()` function, which should generate a new array of numbers and set the `dice` state to that new array (thus re-rendering the array to the page).
 
-	```js
-	function rollDice() {
-		setDice(allNewDice())
-	}
-	```
+    ```js
+    function rollDice() {
+        setDice(allNewDice());
+    }
+    ```
 
--   [x] Style `Roll` dice button using *styles* from *figma design template*. Add these styles to `App.css` :-
+-   [x] Style `Roll` dice button using _styles_ from _figma design template_. Add these styles to `App.css` :-
 
-	```css
-	.roll-dice {
-		margin-top: 2em;
-		height: 50px;
-		width: 100px;
-		border: none;
-		border-radius: 6px;
-		background-color: #5035FF;
-		color: white;
-		font-size: 1.2rem;
-		font-family: 'Karla', sans-serif;
-		cursor: pointer;
-	}
+    ```css
+    .roll-dice {
+        margin-top: 2em;
+        height: 50px;
+        width: 100px;
+        border: none;
+        border-radius: 6px;
+        background-color: #5035ff;
+        color: white;
+        font-size: 1.2rem;
+        font-family: "Karla", sans-serif;
+        cursor: pointer;
+    }
 
-	.roll-dice:focus {
-		outline: none;
-	}
+    .roll-dice:focus {
+        outline: none;
+    }
 
-	.roll-dice:active {
-		box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
-	}
-	```
+    .roll-dice:active {
+        box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+    }
+    ```
 
 ### 11. Change Dice to Objects 🪢
 
 -   [x] Inside **`App`** component, update the array of numbers in state to be an array of objects instead. Each object should look like: `{ value: <random number>, isHeld: false }`. Updated `allNewDice()` function looks something like this :-
 
-	```js
-	function allNewDice() {
-		const newDice = []
-		for (let i = 0; i < 10; i++) {
-			newDice.push({
-				value: Math.ceil(Math.random() * 6), 
-				isHeld: false
-			})
-		}
-		return newDice
-	}
-	``` 
+    ```js
+    function allNewDice() {
+        const newDice = [];
+        for (let i = 0; i < 10; i++) {
+            newDice.push({
+                value: Math.ceil(Math.random() * 6),
+                isHeld: false,
+            });
+        }
+        return newDice;
+    }
+    ```
 
--   [x] Making this change will break parts of our code, so we need to update `diceElement` variable and access the `value` *key* from our `array of objects`. Updated `diceElements` variable looks something like this :-
+-   [x] Making this change will break parts of our code, so we need to update `diceElement` variable and access the `value` _key_ from our `array of objects`. Updated `diceElements` variable looks something like this :-
 
-	```js
-	const diceElements = dice.map((dice) => <Dice value={dice.value} />);
-	```
+    ```js
+    const diceElements = dice.map((dice) => <Dice value={dice.value} />);
+    ```
 
--   [x] Let's fix this warning -> `Warning ⚠️ : Each child in a list should have a unique "key" prop.`, by using a *npm package* `nanoid` which lets us *generate unique ID's* on the fly. Here are the code changes we need to make to the **`App`** component to make this work :-
+-   [x] Let's fix this warning -> `Warning ⚠️ : Each child in a list should have a unique "key" prop.`, by using a _npm package_ `nanoid` which lets us _generate unique ID's_ on the fly. Here are the code changes we need to make to the **`App`** component to make this work :-
 
-	- Import `nanoid` package at the top of `App.js` :
+    -   Import `nanoid` package at the top of `App.js` :
 
-	```js
-	import { nanoid } from "nanoid";
-	```
+    ```js
+    import { nanoid } from "nanoid";
+    ```
 
-	- Create an `id` property and assign `nanoid()` function as it's value :
+    -   Create an `id` property and assign `nanoid()` function as it's value :
 
-	```js
-	value: Math.ceil(Math.random() * 6),
-	isHeld: false,
-	id: nanoid()
-	```
+    ```js
+    value: Math.ceil(Math.random() * 6),
+    isHeld: false,
+    id: nanoid()
+    ```
 
-	- Assign the `key` *prop* the value of `id`:
+    -   Assign the `key` _prop_ the value of `id`:
 
-	```js
-	const diceElements = dice.map((dice) => (
-		<Dice key={dice.id} value={dice.value} />
+    ```js
+    const diceElements = dice.map((dice) => (
+        <Dice key={dice.id} value={dice.value} />
     ));
-	```
-
+    ```
 
 ### 12. Styling Held Dice
 
--   [x] Pass a `isHeld` prop inside **`App`** component, in `diceElement` when rendering our **`Dice`** component. 
-	```js
-	const diceElements = dice.map((dice) => (
+-   [x] Pass a `isHeld` prop inside **`App`** component, in `diceElement` when rendering our **`Dice`** component.
+
+    ```js
+    const diceElements = dice.map((dice) => (
         <Dice key={dice.id} value={dice.value} isHeld={dice.isHeld} />
     ));
-	```
+    ```
 
--   [x] Add conditional styling to the **`Dice`** component so that if it's *isheld prop is true* `(isHeld === true)`, its *background color* changes to a light green `(#59E391)`.
-	```js
-	const styles = {
-        backgroundColor: props.isHeld ? "#59E391" : "white"
-    }
+-   [x] Add conditional styling to the **`Dice`** component so that if it's _isheld prop is true_ `(isHeld === true)`, its _background color_ changes to a light green `(#59E391)`.
+
+    ```js
+    const styles = {
+        backgroundColor: props.isHeld ? "#59E391" : "white",
+    };
 
     return (
         <div className="dice-face" style={styles}>
-			{diceSpanEles}
+            {diceSpanEles}
         </div>
     );
-	```
-
--   [ ] Remember: currently the Die component has no way of knowing if it's "held" or not.
-
+    ```
 
 ### 13. Hold Dice
 
