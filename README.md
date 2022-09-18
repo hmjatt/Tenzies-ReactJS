@@ -545,7 +545,18 @@ npm start
     ));
 	```
 
--   [ ] Add conditional styling to the **`Dice`** component so that if it's *isheld prop is true* `(isHeld === true)`, its *background color* changes to a light green `(#59E391)`.
+-   [x] Add conditional styling to the **`Dice`** component so that if it's *isheld prop is true* `(isHeld === true)`, its *background color* changes to a light green `(#59E391)`.
+	```js
+	const styles = {
+        backgroundColor: props.isHeld ? "#59E391" : "white"
+    }
+
+    return (
+        <div className="dice-face" style={styles}>
+			{diceSpanEles}
+        </div>
+    );
+	```
 
 -   [ ] Remember: currently the Die component has no way of knowing if it's "held" or not.
 

@@ -61,8 +61,12 @@ function Dice(props) {
 		diceSpanEles = <h2 className="dice-num">{props.value}</h2>;
 	}
 
+	const styles = {
+        backgroundColor: props.isHeld ? "#59E391" : "white"
+    }
+
     return (
-        <div className="dice-face">
+        <div className="dice-face" style={styles}>
 			{diceSpanEles}
         </div>
     );
