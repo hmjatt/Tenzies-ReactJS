@@ -66,7 +66,7 @@ function Dice(props) {
     }
 
     return (
-        <div className="dice-face" style={styles}>
+        <div className="dice-face" style={styles} onClick={props.holdDice}>
 			{diceSpanEles}
         </div>
     );

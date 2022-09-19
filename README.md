@@ -572,7 +572,12 @@ npm start
     ));
 	```
 
--   [ ] 
+-   [x] In **`Dice`** component accept `holdDice` prop and bound it to `onClick` event.
+	```js
+	<div className="dice-face" style={styles} onClick={props.holdDice}>
+		{diceSpanEles}
+    </div>
+	```
 
 ### 14. End Game
 
