@@ -12,7 +12,7 @@ function App() {
         for (let i = 0; i < 10; i++) {
             newDice.push({
                 value: Math.ceil(Math.random() * 6),
-                isHeld: true,
+                isHeld: false,
                 id: nanoid()
             });
         }
@@ -23,8 +23,12 @@ function App() {
         setDice(allNewDice());
     }
 
+	function holdDice(id) {
+        console.log(id)
+    }
+
     const diceElements = dice.map((dice) => (
-        <Dice key={dice.id} value={dice.value} isHeld={dice.isHeld} />
+        <Dice key={dice.id} value={dice.value} isHeld={dice.isHeld} holdDice={() => holdDice(dice.id)} />
     ));
 
     return (
