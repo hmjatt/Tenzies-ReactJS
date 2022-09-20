@@ -623,7 +623,30 @@ npm start
         );
     }
 	```
+-   [x] Add *Title & Description elements* to give some additional information to the *users*. Style 
 
+	```html
+	<h1 className="title">Tenzies</h1>
+	<p className="instructions">
+		Roll until all dice are the same. Click each die to freeze
+		it at its current value between rolls.
+	</p>
+	```
+
+	```css
+	.title {
+		font-size: 40px;
+		margin: 0;
+	}
+
+	.instructions {
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		margin-top: 0;
+		text-align: center;
+		margin-top: 1em;
+	}
+	```
 ### 14. End Game
 
 ### 15. New Game
