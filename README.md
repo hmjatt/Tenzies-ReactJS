@@ -590,6 +590,32 @@ npm start
     }
 	```
 
+-   [x] Create a helper function `generateNewDice()` that allows us to generate new `Dice` *object*, when we call it. Let's use helper function to create `Dice` *object* inside `allNewDice` function.
+	```js
+    function generateNewDice() {
+        return {
+            value: Math.ceil(Math.random() * 6),
+            isHeld: false,
+            id: nanoid()
+        }
+    }
+
+	function allNewDice() {
+        const newDice = [];
+        for (let i = 0; i < 10; i++) {
+            newDice.push(generateNewDice());
+        }
+        return newDice;
+    }
+	```
+
+<!-- -   [x] Update the `rollDice` function to not just roll all new dice, but instead to look through the existing dice to NOT roll any dice that are being `held`. Same as `holdDice` function, we will use `setDice` state function then `.map()` over the *array of objects*. Every *Dice object* *value* will be changed, except the ones that has their property *isHeld === true*.
+	```js
+	<div className="dice-face" style={styles} onClick={props.holdDice}>
+		{diceSpanEles}
+    </div>
+	``` -->
+
 ### 14. End Game
 
 ### 15. New Game

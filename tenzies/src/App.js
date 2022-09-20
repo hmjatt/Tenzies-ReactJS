@@ -7,14 +7,18 @@ import Footer from "./components/Footer";
 function App() {
     const [dice, setDice] = useState(allNewDice());
 
+	function generateNewDice() {
+        return {
+            value: Math.ceil(Math.random() * 6),
+            isHeld: false,
+            id: nanoid()
+        }
+    }
+
     function allNewDice() {
         const newDice = [];
         for (let i = 0; i < 10; i++) {
-            newDice.push({
-                value: Math.ceil(Math.random() * 6),
-                isHeld: false,
-                id: nanoid()
-            });
+            newDice.push(generateNewDice());
         }
         return newDice;
     }
