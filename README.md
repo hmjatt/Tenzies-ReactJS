@@ -647,6 +647,9 @@ npm start
 		margin-top: 1em;
 	}
 	```
+
+	Output -> 
+	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Held-Dice.png)
 ### 14. End Game
 
 ### 15. New Game
