@@ -7,12 +7,12 @@ import Footer from "./components/Footer";
 function App() {
     const [dice, setDice] = useState(allNewDice());
 
-	function generateNewDice() {
+    function generateNewDice() {
         return {
             value: Math.ceil(Math.random() * 6),
             isHeld: false,
-            id: nanoid()
-        }
+            id: nanoid(),
+        };
     }
 
     function allNewDice() {
@@ -24,19 +24,30 @@ function App() {
     }
 
     function rollDice() {
-        setDice(allNewDice());
+        setDice((oldDice) =>
+            oldDice.map((dice) => {
+                return dice.isHeld ? dice : generateNewDice();
+            })
+        );
     }
 
     function holdDice(id) {
-        setDice(oldDice => oldDice.map(dice => {
-            return dice.id === id ? 
-                {...dice, isHeld: !dice.isHeld} :
-                dice
-        }))
+        setDice((oldDice) =>
+            oldDice.map((dice) => {
+                return dice.id === id
+                    ? { ...dice, isHeld: !dice.isHeld }
+                    : dice;
+            })
+        );
     }
 
     const diceElements = dice.map((dice) => (
-        <Dice key={dice.id} value={dice.value} isHeld={dice.isHeld} holdDice={() => holdDice(dice.id)} />
+        <Dice
+            key={dice.id}
+            value={dice.value}
+            isHeld={dice.isHeld}
+            holdDice={() => holdDice(dice.id)}
+        />
     ));
 
     return (

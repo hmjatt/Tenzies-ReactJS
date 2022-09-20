@@ -591,6 +591,7 @@ npm start
 	```
 
 -   [x] Create a helper function `generateNewDice()` that allows us to generate new `Dice` *object*, when we call it. Let's use helper function to create `Dice` *object* inside `allNewDice` function.
+
 	```js
     function generateNewDice() {
         return {
@@ -609,12 +610,19 @@ npm start
     }
 	```
 
-<!-- -   [x] Update the `rollDice` function to not just roll all new dice, but instead to look through the existing dice to NOT roll any dice that are being `held`. Same as `holdDice` function, we will use `setDice` state function then `.map()` over the *array of objects*. Every *Dice object* *value* will be changed, except the ones that has their property *isHeld === true*.
+-   [x] Update the `rollDice` function to not just roll all new dice, but instead to look through the existing dice to NOT roll any dice that are being `held`. Same as `holdDice` function, we will use `setDice` state function then `.map()` over the *array of objects*. When calling helper function `generateNewDice()`, every *Dice object's* *value* will be changed, except the ones that has their property *isHeld === true*.
+
 	```js
-	<div className="dice-face" style={styles} onClick={props.holdDice}>
-		{diceSpanEles}
-    </div>
-	``` -->
+    function holdDice(id) {
+        setDice((oldDice) =>
+            oldDice.map((dice) => {
+                return dice.id === id
+                    ? { ...dice, isHeld: !dice.isHeld }
+                    : dice;
+            })
+        );
+    }
+	```
 
 ### 14. End Game
 
