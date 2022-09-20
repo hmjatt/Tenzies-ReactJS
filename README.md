@@ -579,6 +579,17 @@ npm start
     </div>
 	```
 
+-   [x]  Update the `holdDice` function to flip the `isHeld` property on the object in the array that was clicked, based on the `id` prop passed into the function. In **`App`** component, we will use `setDice` state function then `.map()` over the *array of objects*. Every *Dice object* will be in exactly the same *state* as it was, except the ones that has their *isHeld* property flipped(to true).
+	```js
+    function holdDice(id) {
+        setDice(oldDice => oldDice.map(dice => {
+            return dice.id === id ? 
+                {...dice, isHeld: !dice.isHeld} :
+                dice
+        }))
+    }
+	```
+
 ### 14. End Game
 
 ### 15. New Game
