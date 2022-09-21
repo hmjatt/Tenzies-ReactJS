@@ -659,7 +659,15 @@ npm start
 	const [tenzies, setTenzies] = useState(false)
 	```
 
--   [ ] Add an *effect hook`(useEffect)`* that runs every time the `dice` state array changes. For now, just console.log("Dice state changed").
+-   [x] Add an *effect hook`(useEffect)`* that runs every time the `dice` state array changes. For now, just console.log("Dice state changed"). We are using *effect hook`(useEffect)`* in order to keep *two states`(Dice & tenzies)`* in sync with each other. Ignore the `non-unused-vars` warnings for now.
+
+	```js
+	import { useState, useEffect } from "react";
+
+	useEffect(() => {
+        console.log("Dice state changed")
+    }, [dice])
+	```
 
 ### 15. New Game
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import "./styles/App.css";
 import Dice from "./components/Dice";
@@ -6,6 +6,11 @@ import Footer from "./components/Footer";
 
 function App() {
     const [dice, setDice] = useState(allNewDice());
+	const [tenzies, setTenzies] = useState(false)
+
+	useEffect(() => {
+        console.log("Dice state changed")
+    }, [dice])
 
     function generateNewDice() {
         return {
