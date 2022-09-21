@@ -688,7 +688,7 @@ npm start
 		}
 	}, [dice])
 	```
--   [ ]  If tenzies is `true`, change the button text to "New Game" and use the `react-confetti` [package](https://www.npmjs.com/package/react-confetti) to render the <Confetti /> component.
+-   [x]  If tenzies is `true`, change the button text to "New Game" and use the `react-confetti` [package](https://www.npmjs.com/package/react-confetti) to render the <Confetti /> component.
 
 	```console
 	npm install react-confetti
