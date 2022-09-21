@@ -650,7 +650,15 @@ npm start
 
 	Output -> 
 	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Held-Dice.png)
+	
 ### 14. End Game
+
+-   [ ] Add new state called `tenzies`, default to false. It represents whether the user has won the game yet or not.
+
+-   [ ] Add an effect that runs every time the `dice` state array changes. For now, just console.log("Dice state changed").
+
+ * 1. 
+ * 2. 
 
 ### 15. New Game
 
