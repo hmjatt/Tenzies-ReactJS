@@ -659,7 +659,7 @@ npm start
 	const [tenzies, setTenzies] = useState(false)
 	```
 
--   [x] Add an *effect hook`(useEffect)`* that runs every time the `dice` state array changes. For now, just console.log("Dice state changed"). We are using *effect hook`(useEffect)`* in order to keep *two states`(Dice & tenzies)`* in sync with each other. Ignore the `non-unused-vars` warnings for now.
+-   [x] Add an *Effect Hook`(useEffect)`* that runs every time the `dice` state array changes. For now, just console.log("Dice state changed"). We are using *effect hook`(useEffect)`* in order to keep *two states`(Dice & tenzies)`* in sync with each other. Ignore the `non-unused-vars` warnings for now.
 
 	```js
 	import { useState, useEffect } from "react";
@@ -667,6 +667,26 @@ npm start
 	useEffect(() => {
         console.log("Dice state changed")
     }, [dice])
+	```
+
+-   [x] We will use *`.every()` [array method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)*, which returns `true` if every item in the *array* is *same* else it returns `false`. In our case if all dice are *held* & all dice have the *same value*, `console.log("You won!")` Let's update our *Effect Hook`(useEffect)`* ->
+
+	```js
+	useEffect(() => {
+
+		// All dice are held
+		const allHeld = dice.every(die => die.isHeld)
+
+		// All dice have the same value
+		const firstValue = dice[0].value
+		const allSameValue = dice.every(die => die.value === firstValue)
+
+		// if `allHeld` and `allSameValue)` === true, we won
+		if (allHeld && allSameValue) {
+			setTenzies(true)
+			console.log("You won!")
+		}
+	}, [dice])
 	```
 
 ### 15. New Game
