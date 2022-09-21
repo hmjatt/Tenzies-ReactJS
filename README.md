@@ -559,7 +559,7 @@ npm start
     );
     ```
 
-### 13. Hold Dice
+### 13. Hold Dice ✋
 
 -   [x] In **`App`** component, create a function `holdDice` that takes `id` as a parameter. For now, just have the function console.log(id). Pass that function down to each instance of the Die component as a prop, so when each one is clicked, it logs its own unique ID property.
 	```js
@@ -651,14 +651,15 @@ npm start
 	Output -> 
 	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Held-Dice.png)
 	
-### 14. End Game
+### 14. End Game 🔚
 
--   [ ] Add new state called `tenzies`, default to false. It represents whether the user has won the game yet or not.
+-   [x] In **`App`** component add new *state* called `tenzies`, default to *false*. It represents whether the user has won the game yet or not.
 
--   [ ] Add an effect that runs every time the `dice` state array changes. For now, just console.log("Dice state changed").
+	```js
+	const [tenzies, setTenzies] = useState(false)
+	```
 
- * 1. 
- * 2. 
+-   [ ] Add an *effect hook`(useEffect)`* that runs every time the `dice` state array changes. For now, just console.log("Dice state changed").
 
 ### 15. New Game
 
