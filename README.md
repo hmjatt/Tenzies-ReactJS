@@ -730,7 +730,7 @@ npm start
 
 -   [ ] JS Challenge -> Track the number of _Rolls_ it took to win the game by updating `rollDice()` function inside **`App`** component.
 
-### 16. Make App Responsive 🎨
+### 17. Make App Responsive 🎨
 
 <!-- -   [x] Change _Absolute_ units to _Relative_.
 

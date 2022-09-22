@@ -1,28 +1,28 @@
 import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
-import Confetti from "react-confetti"
+import Confetti from "react-confetti";
 import "./styles/App.css";
 import Dice from "./components/Dice";
 import Footer from "./components/Footer";
 
 function App() {
     const [dice, setDice] = useState(allNewDice());
-	const [tenzies, setTenzies] = useState(false)
+    const [tenzies, setTenzies] = useState(false);
+	
 
-	useEffect(() => {
+    useEffect(() => {
+        // All dice are held
+        const allHeld = dice.every((die) => die.isHeld);
 
-		// All dice are held
-		const allHeld = dice.every(die => die.isHeld)
+        // All dice have the same value
+        const firstValue = dice[0].value;
+        const allSameValue = dice.every((die) => die.value === firstValue);
 
-		// All dice have the same value
-		const firstValue = dice[0].value
-        const allSameValue = dice.every(die => die.value === firstValue)
-
-		// if `allHeld` and `allSameValue)` === true, we won
-		if (allHeld && allSameValue) {
-            setTenzies(true)
+        // if `allHeld` and `allSameValue)` === true, we won
+        if (allHeld && allSameValue) {
+            setTenzies(true);
         }
-    }, [dice])
+    }, [dice]);
 
     function generateNewDice() {
         return {
@@ -40,17 +40,24 @@ function App() {
         return newDice;
     }
 
-	function rollDice() {
-        if(!tenzies) {
-            setDice(oldDice => oldDice.map(dice => {
-                return dice.isHeld ? 
-                    dice :
-                    generateNewDice()
-            }))
+	let numOfRolls = 0;
+
+    function rollDice() {
+        
+
+        if (!tenzies) {
+            setDice((oldDice) =>
+                oldDice.map((dice) => {
+                    return dice.isHeld ? dice : generateNewDice();
+                })
+            );
+			numOfRolls = numOfRolls + 1;
         } else {
-            setTenzies(false)
-            setDice(allNewDice())
+            setTenzies(false);
+            setDice(allNewDice());
+			numOfRolls = 0;
         }
+		console.log(numOfRolls)
     }
 
     function holdDice(id) {
@@ -75,7 +82,7 @@ function App() {
     return (
         <div className="App">
             <main>
-				{tenzies && <Confetti />}
+                {tenzies && <Confetti />}
                 <h1 className="title">Tenzies</h1>
                 <p className="instructions">
                     Roll until all dice are the same. Click each die to freeze
