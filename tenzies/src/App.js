@@ -21,7 +21,6 @@ function App() {
 		// if `allHeld` and `allSameValue)` === true, we won
 		if (allHeld && allSameValue) {
             setTenzies(true)
-            console.log("You won!")
         }
     }, [dice])
 
@@ -41,12 +40,17 @@ function App() {
         return newDice;
     }
 
-    function rollDice() {
-        setDice((oldDice) =>
-            oldDice.map((dice) => {
-                return dice.isHeld ? dice : generateNewDice();
-            })
-        );
+	function rollDice() {
+        if(!tenzies) {
+            setDice(oldDice => oldDice.map(dice => {
+                return dice.isHeld ? 
+                    dice :
+                    generateNewDice()
+            }))
+        } else {
+            setTenzies(false)
+            setDice(allNewDice())
+        }
     }
 
     function holdDice(id) {

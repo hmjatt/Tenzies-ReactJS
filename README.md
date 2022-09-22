@@ -711,6 +711,21 @@ npm start
 
 -   [ ] Allow the user to play a new game when the `New Game` button is clicked and they've already won. In **`App`** component, let's update `rollDice()` function such that user can only *roll the dice* if `tenzies === false`. Else `tenzies === true`(if they've won the game), set `tenzies === false` and generate *all new dice*.
 
+	```js
+	function rollDice() {
+        if(!tenzies) {
+            setDice(oldDice => oldDice.map(dice => {
+                return dice.isHeld ? 
+                    dice :
+                    generateNewDice()
+            }))
+        } else {
+            setTenzies(false)
+            setDice(allNewDice())
+        }
+    }
+	```
+
 ### 16. Make App Responsive 🎨
 
 <!-- -   [x] Change _Absolute_ units to _Relative_.
