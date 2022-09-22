@@ -469,7 +469,7 @@ npm start
     .roll-dice {
         margin-top: 2em;
         height: 50px;
-        width: 100px;
+        width: 150px;
         border: none;
         border-radius: 6px;
         background-color: #5035ff;
@@ -704,8 +704,11 @@ npm start
 		</button>
 	</main>
 	```
+	Output -> 
+	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Win-Confetti.png)
 
 ### 15. New Game
+
 
 ### 16. Make App Responsive 🎨
 
