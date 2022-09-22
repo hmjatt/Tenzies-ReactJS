@@ -259,7 +259,7 @@ npm start
     console.log(allNewDice());
     ```
 
-### 8. CSS Challenge - Replace _Numbers_ with _Dots_ 🔢
+### 8. Replace _Numbers_ with _Dots_ 🔢
 
 -   [x] CSS Challenge -> Put _Real Dots_ on the _Dice_. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
 
@@ -709,7 +709,7 @@ npm start
 
 ### 15. New Game 🆕
 
--   [ ] Allow the user to play a new game when the `New Game` button is clicked and they've already won. In **`App`** component, let's update `rollDice()` function such that user can only *roll the dice* if `tenzies === false`. Else `tenzies === true`(if they've won the game), set `tenzies === false` and generate *all new dice*.
+-   [x] Allow the user to play a new game when the `New Game` button is clicked and they've already won. In **`App`** component, let's update `rollDice()` function such that user can only *roll the dice* if `tenzies === false`. Else `tenzies === true`(if they've won the game), set `tenzies === false` and generate *all new dice*.
 
 	```js
 	function rollDice() {
@@ -725,6 +725,10 @@ npm start
         }
     }
 	```
+
+### 16. Track Number Of Rolls #️⃣
+
+-   [ ] JS Challenge -> Track the number of _Rolls_ it took to win the game by updating `rollDice()` function inside **`App`** component.
 
 ### 16. Make App Responsive 🎨
 
