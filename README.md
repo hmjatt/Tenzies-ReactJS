@@ -688,7 +688,7 @@ npm start
 		}
 	}, [dice])
 	```
--   [x]  If tenzies is `true`, change the button text to "New Game" and use the `react-confetti` [package](https://www.npmjs.com/package/react-confetti) to render the <Confetti /> component.
+-   [x] If tenzies is `true`, change the button text to "New Game" and use the `react-confetti` [package](https://www.npmjs.com/package/react-confetti) to render the <Confetti /> component.
 
 	```console
 	npm install react-confetti
@@ -707,8 +707,9 @@ npm start
 	Output -> 
 	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Win-Confetti.png)
 
-### 15. New Game
+### 15. New Game 🆕
 
+-   [ ] Allow the user to play a new game when the `New Game` button is clicked and they've already won. In **`App`** component, let's update `rollDice()` function such that user can only *roll the dice* if `tenzies === false`. Else `tenzies === true`(if they've won the game), set `tenzies === false` and generate *all new dice*.
 
 ### 16. Make App Responsive 🎨
 
