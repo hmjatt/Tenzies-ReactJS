@@ -8,8 +8,7 @@ import Footer from "./components/Footer";
 function App() {
     const [dice, setDice] = useState(allNewDice());
     const [tenzies, setTenzies] = useState(false);
-	const [numOfRolls, setNumOfRolls] = useState(0);
-	
+    const [numOfRolls, setNumOfRolls] = useState(0);
 
     useEffect(() => {
         // All dice are held
@@ -41,10 +40,9 @@ function App() {
         return newDice;
     }
 
-
     function rollDice() {
         if (!tenzies) {
-			// setNumOfRolls(prevState => prevState + 1)
+            setNumOfRolls((prevState) => prevState + 1);
             setDice((oldDice) =>
                 oldDice.map((dice) => {
                     return dice.isHeld ? dice : generateNewDice();
@@ -53,10 +51,9 @@ function App() {
         } else {
             setTenzies(false);
             setDice(allNewDice());
-			// setNumOfRolls(0);
+            setNumOfRolls(0);
         }
     }
-
 
     function holdDice(id) {
         setDice((oldDice) =>
@@ -86,7 +83,7 @@ function App() {
                     Roll until all dice are the same. Click each die to freeze
                     it at its current value between rolls.
                 </p>
-				{/* <h2 className="track-rolls">Number of Rolls: {numOfRolls}</h2> */}
+                {/* <h2 className="track-rolls">Number of Rolls: {numOfRolls}</h2> */}
                 <div className="dice-container">{diceElements}</div>
                 <button className="roll-dice" onClick={rollDice}>
                     {tenzies ? "New Game" : "Roll"}

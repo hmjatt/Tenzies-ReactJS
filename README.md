@@ -734,6 +734,18 @@ npm start
 	const [numOfRolls, setNumOfRolls] = useState(0);
 	```
 
+-   [x] Inside `rollDice()` function add a couple of statements that change `numOfRolls` state, such that when `Roll` button is clicked *(game is not won)* it increases `numOfRolls` state by 1. And when game is won and `New Game` button is clicked *(game is won)*, `numOfRolls` state is reset back to 0.
+
+	```js
+	function rollDice() {
+        if (!tenzies) {
+			setNumOfRolls(prevState => prevState + 1)
+        } else {
+			setNumOfRolls(0);
+        }
+    }
+	```
+
 
 ### 17. Make App Responsive 🎨
 
