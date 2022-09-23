@@ -83,7 +83,7 @@ function App() {
                     Roll until all dice are the same. Click each die to freeze
                     it at its current value between rolls.
                 </p>
-                {/* <h2 className="track-rolls">Number of Rolls: {numOfRolls}</h2> */}
+                <h2 className="track-rolls">Number of Rolls: {numOfRolls}</h2>
                 <div className="dice-container">{diceElements}</div>
                 <button className="roll-dice" onClick={rollDice}>
                     {tenzies ? "New Game" : "Roll"}

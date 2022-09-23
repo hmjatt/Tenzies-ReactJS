@@ -745,6 +745,11 @@ npm start
         }
     }
 	```
+-   [x] Create `<h2>` element and insert value of `numOfRolls` state inside it.
+
+	```html
+	<h2 className="track-rolls">Number of Rolls: {numOfRolls}</h2>
+	```
 
 
 ### 17. Make App Responsive 🎨
