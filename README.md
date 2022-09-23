@@ -259,9 +259,9 @@ npm start
     console.log(allNewDice());
     ```
 
-### 8. Replace _Numbers_ with _Dots_ 🔢
+### 8. Replace _Numbers_ with _Dots_ (CSS Challenge) 🔢
 
--   [x] CSS Challenge -> Put _Real Dots_ on the _Dice_. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
+-   [x] Put _Real Dots_ on the _Dice_. Here is a link to an article that helped me with some of the css in **`Dice`** component [Creating Dice in Flexbox in CSS](https://betterprogramming.pub/creating-dice-in-flexbox-in-css-a02a5d85e516)
 
 -   [x] Update styles for **`Dice`** component in `App.css` and it should look like this :-
 
@@ -726,9 +726,14 @@ npm start
     }
 	```
 
-### 16. Track Number Of Rolls #️⃣
+### 16. Track Number Of Rolls (JS Challenge) #️⃣
 
--   [ ] JS Challenge -> Track the number of _Rolls_ it took to win the game by updating `rollDice()` function inside **`App`** component.
+-   [x] Track the number of _Rolls_ it took to win the game. Inside **`App`** component, let's define a *state* called `numOfRolls` and set it's *default value* to `0`.
+
+	```js
+	const [numOfRolls, setNumOfRolls] = useState(0);
+	```
+
 
 ### 17. Make App Responsive 🎨
 
