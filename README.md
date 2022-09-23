@@ -767,13 +767,17 @@ npm start
     Output ->
     ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Num-Of-Rolls.png)
 
-### 17. Make App Responsive 🎨
+### 17. Track The Time (JS Challenge) ⌚
+
+-   [ ] Track the _time_ it took to win the game.
+
+### 18. Make App Responsive 🎨
 
 <!-- -   [x] Change _Absolute_ units to _Relative_.
 
 -   [x] Make App responsive for mobile by adding `media query` . :smiley: -->
 
-### 17. Prepare for Deployment 🪢
+### 19. Prepare for Deployment 🪢
 
 <!-- -   [x] Delete **unnecessary** files from directory and format code with `Prettier`.
 
@@ -790,7 +794,7 @@ npm start
 ## Future Changes ♾️
 
 -   [x] CSS - Put _Real Dots_ on the _Dice_.
--   [ ] JS - Track Number of _Rolls_ it took to win the game.
+-   [x] JS - Track Number of _Rolls_ it took to win the game.
 -   [ ] JS - Track the _time_ it took to win the game.
 -   [ ] JS - Save _Best Time/Rolls_ to `localStorage` and try to beat the record.
 
