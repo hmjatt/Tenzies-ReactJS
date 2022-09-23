@@ -9,6 +9,7 @@ function App() {
     const [dice, setDice] = useState(allNewDice());
     const [tenzies, setTenzies] = useState(false);
     const [numOfRolls, setNumOfRolls] = useState(0);
+	const [timer, setTimer] = useState(0);
 
     useEffect(() => {
         // All dice are held
@@ -43,6 +44,7 @@ function App() {
     function rollDice() {
         if (!tenzies) {
             setNumOfRolls((prevState) => prevState + 1);
+			setInterval(setTimer(prevState => prevState + 1), 1000)
             setDice((oldDice) =>
                 oldDice.map((dice) => {
                     return dice.isHeld ? dice : generateNewDice();
@@ -54,6 +56,8 @@ function App() {
             setNumOfRolls(0);
         }
     }
+
+	console.log(timer)
 
     function holdDice(id) {
         setDice((oldDice) =>
