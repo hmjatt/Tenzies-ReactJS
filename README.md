@@ -751,6 +751,9 @@ npm start
 	<h2 className="track-rolls">Number of Rolls: {numOfRolls}</h2>
 	```
 
+	Output -> 
+	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Num-Of-Rolls.png)
+
 
 ### 17. Make App Responsive 🎨
 
