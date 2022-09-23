@@ -562,57 +562,33 @@ npm start
 ### 13. Hold Dice ✋
 
 -   [x] In **`App`** component, create a function `holdDice` that takes `id` as a parameter. For now, just have the function console.log(id). Pass that function down to each instance of the Die component as a prop, so when each one is clicked, it logs its own unique ID property.
-	```js
-	function holdDice(id) {
-        console.log(id)
+
+    ```js
+    function holdDice(id) {
+        console.log(id);
     }
 
     const diceElements = dice.map((dice) => (
-        <Dice key={dice.id} value={dice.value} isHeld={dice.isHeld} holdDice={() => holdDice(dice.id)} />
+        <Dice
+            key={dice.id}
+            value={dice.value}
+            isHeld={dice.isHeld}
+            holdDice={() => holdDice(dice.id)}
+        />
     ));
-	```
+    ```
 
 -   [x] In **`Dice`** component accept `holdDice` prop and bound it to `onClick` event.
-	```js
-	<div className="dice-face" style={styles} onClick={props.holdDice}>
-		{diceSpanEles}
+
+    ```js
+    <div className="dice-face" style={styles} onClick={props.holdDice}>
+        {diceSpanEles}
     </div>
-	```
+    ```
 
--   [x]  Update the `holdDice` function to flip the `isHeld` property on the object in the array that was clicked, based on the `id` prop passed into the function. In **`App`** component, we will use `setDice` state function then `.map()` over the *array of objects*. Every *Dice object* will be in exactly the same *state* as it was, except the ones that has their *isHeld* property flipped(to true).
-	```js
-    function holdDice(id) {
-        setDice(oldDice => oldDice.map(dice => {
-            return dice.id === id ? 
-                {...dice, isHeld: !dice.isHeld} :
-                dice
-        }))
-    }
-	```
+-   [x] Update the `holdDice` function to flip the `isHeld` property on the object in the array that was clicked, based on the `id` prop passed into the function. In **`App`** component, we will use `setDice` state function then `.map()` over the _array of objects_. Every _Dice object_ will be in exactly the same _state_ as it was, except the ones that has their _isHeld_ property flipped(to true).
 
--   [x] Create a helper function `generateNewDice()` that allows us to generate new `Dice` *object*, when we call it. Let's use helper function to create `Dice` *object* inside `allNewDice` function.
-
-	```js
-    function generateNewDice() {
-        return {
-            value: Math.ceil(Math.random() * 6),
-            isHeld: false,
-            id: nanoid()
-        }
-    }
-
-	function allNewDice() {
-        const newDice = [];
-        for (let i = 0; i < 10; i++) {
-            newDice.push(generateNewDice());
-        }
-        return newDice;
-    }
-	```
-
--   [x] Update the `rollDice` function to not just roll all new dice, but instead to look through the existing dice to NOT roll any dice that are being `held`. Same as `holdDice` function, we will use `setDice` state function then `.map()` over the *array of objects*. When calling helper function `generateNewDice()`, every *Dice object's* *value* will be changed, except the ones that has their property *isHeld === true*.
-
-	```js
+    ```js
     function holdDice(id) {
         setDice((oldDice) =>
             oldDice.map((dice) => {
@@ -622,138 +598,174 @@ npm start
             })
         );
     }
-	```
--   [x] Add *Title & Description elements* to give some additional information to the *users*. Style 
+    ```
 
-	```html
-	<h1 className="title">Tenzies</h1>
-	<p className="instructions">
-		Roll until all dice are the same. Click each die to freeze
-		it at its current value between rolls.
-	</p>
-	```
+-   [x] Create a helper function `generateNewDice()` that allows us to generate new `Dice` _object_, when we call it. Let's use helper function to create `Dice` _object_ inside `allNewDice` function.
 
-	```css
-	.title {
-		font-size: 40px;
-		margin: 0;
-	}
+    ```js
+    function generateNewDice() {
+        return {
+            value: Math.ceil(Math.random() * 6),
+            isHeld: false,
+            id: nanoid(),
+        };
+    }
 
-	.instructions {
-		font-family: 'Inter', sans-serif;
-		font-weight: 400;
-		margin-top: 0;
-		text-align: center;
-		margin-top: 1em;
-	}
-	```
+    function allNewDice() {
+        const newDice = [];
+        for (let i = 0; i < 10; i++) {
+            newDice.push(generateNewDice());
+        }
+        return newDice;
+    }
+    ```
 
-	Output -> 
-	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Held-Dice.png)
-	
+-   [x] Update the `rollDice` function to not just roll all new dice, but instead to look through the existing dice to NOT roll any dice that are being `held`. Same as `holdDice` function, we will use `setDice` state function then `.map()` over the _array of objects_. When calling helper function `generateNewDice()`, every _Dice object's_ _value_ will be changed, except the ones that has their property _isHeld === true_.
+
+    ```js
+    function holdDice(id) {
+        setDice((oldDice) =>
+            oldDice.map((dice) => {
+                return dice.id === id
+                    ? { ...dice, isHeld: !dice.isHeld }
+                    : dice;
+            })
+        );
+    }
+    ```
+
+-   [x] Add _Title & Description elements_ to give some additional information to the _users_. Style
+
+    ```html
+    <h1 className="title">Tenzies</h1>
+    <p className="instructions">
+        Roll until all dice are the same. Click each die to freeze it at its
+        current value between rolls.
+    </p>
+    ```
+
+    ```css
+    .title {
+        font-size: 40px;
+        margin: 0;
+    }
+
+    .instructions {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        margin-top: 0;
+        text-align: center;
+        margin-top: 1em;
+    }
+    ```
+
+    Output ->
+    ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Held-Dice.png)
+
 ### 14. End Game 🔚
 
--   [x] In **`App`** component add new *state* called `tenzies`, default to *false*. It represents whether the user has won the game yet or not.
+-   [x] In **`App`** component add new _state_ called `tenzies`, default to _false_. It represents whether the user has won the game yet or not.
 
-	```js
-	const [tenzies, setTenzies] = useState(false)
-	```
+    ```js
+    const [tenzies, setTenzies] = useState(false);
+    ```
 
--   [x] Add an *Effect Hook`(useEffect)`* that runs every time the `dice` state array changes. For now, just console.log("Dice state changed"). We are using *effect hook`(useEffect)`* in order to keep *two states`(Dice & tenzies)`* in sync with each other. Ignore the `non-unused-vars` warnings for now.
+-   [x] Add an _Effect Hook`(useEffect)`_ that runs every time the `dice` state array changes. For now, just console.log("Dice state changed"). We are using _effect hook`(useEffect)`_ in order to keep _two states`(Dice & tenzies)`_ in sync with each other. Ignore the `non-unused-vars` warnings for now.
 
-	```js
-	import { useState, useEffect } from "react";
+    ```js
+    import { useState, useEffect } from "react";
 
-	useEffect(() => {
-        console.log("Dice state changed")
-    }, [dice])
-	```
+    useEffect(() => {
+        console.log("Dice state changed");
+    }, [dice]);
+    ```
 
--   [x] We will use *`.every()` [array method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)*, which returns `true` if every item in the *array* is *same* else it returns `false`. In our case if all dice are *held* & all dice have the *same value*, `console.log("You won!")` Let's update our *Effect Hook`(useEffect)`* ->
+-   [x] We will use _`.every()` [array method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)_, which returns `true` if every item in the _array_ is _same_ else it returns `false`. In our case if all dice are _held_ & all dice have the _same value_, `console.log("You won!")` Let's update our _Effect Hook`(useEffect)`_ ->
 
-	```js
-	useEffect(() => {
+    ```js
+    useEffect(() => {
+        // All dice are held
+        const allHeld = dice.every((die) => die.isHeld);
 
-		// All dice are held
-		const allHeld = dice.every(die => die.isHeld)
+        // All dice have the same value
+        const firstValue = dice[0].value;
+        const allSameValue = dice.every((die) => die.value === firstValue);
 
-		// All dice have the same value
-		const firstValue = dice[0].value
-		const allSameValue = dice.every(die => die.value === firstValue)
+        // if `allHeld` and `allSameValue)` === true, we won
+        if (allHeld && allSameValue) {
+            setTenzies(true);
+            console.log("You won!");
+        }
+    }, [dice]);
+    ```
 
-		// if `allHeld` and `allSameValue)` === true, we won
-		if (allHeld && allSameValue) {
-			setTenzies(true)
-			console.log("You won!")
-		}
-	}, [dice])
-	```
 -   [x] If tenzies is `true`, change the button text to "New Game" and use the `react-confetti` [package](https://www.npmjs.com/package/react-confetti) to render the <Confetti /> component.
 
-	```console
-	npm install react-confetti
-	```
+    ```console
+    npm install react-confetti
+    ```
 
-	```js
-	import Confetti from "react-confetti"
+    ```js
+    import Confetti from "react-confetti";
 
-	<main>
-		{tenzies && <Confetti />}
-		<button className="roll-dice" onClick={rollDice}>
-			{tenzies ? "New Game" : "Roll"}
-		</button>
-	</main>
-	```
-	Output -> 
-	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Win-Confetti.png)
+    <main>
+        {tenzies && <Confetti />}
+        <button className="roll-dice" onClick={rollDice}>
+            {tenzies ? "New Game" : "Roll"}
+        </button>
+    </main>;
+    ```
+
+    Output ->
+    ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Win-Confetti.png)
 
 ### 15. New Game 🆕
 
--   [x] Allow the user to play a new game when the `New Game` button is clicked and they've already won. In **`App`** component, let's update `rollDice()` function such that user can only *roll the dice* if `tenzies === false`. Else `tenzies === true`(if they've won the game), set `tenzies === false` and generate *all new dice*.
+-   [x] Allow the user to play a new game when the `New Game` button is clicked and they've already won. In **`App`** component, let's update `rollDice()` function such that user can only _roll the dice_ if `tenzies === false`. Else `tenzies === true`(if they've won the game), set `tenzies === false` and generate _all new dice_.
 
-	```js
-	function rollDice() {
-        if(!tenzies) {
-            setDice(oldDice => oldDice.map(dice => {
-                return dice.isHeld ? 
-                    dice :
-                    generateNewDice()
-            }))
+    ```js
+    function rollDice() {
+        if (!tenzies) {
+            setDice((oldDice) =>
+                oldDice.map((dice) => {
+                    return dice.isHeld ? dice : generateNewDice();
+                })
+            );
         } else {
-            setTenzies(false)
-            setDice(allNewDice())
+            setTenzies(false);
+            setDice(allNewDice());
         }
     }
-	```
+    ```
 
 ### 16. Track Number Of Rolls (JS Challenge) #️⃣
 
--   [x] Track the number of _Rolls_ it took to win the game. Inside **`App`** component, let's define a *state* called `numOfRolls` and set it's *default value* to `0`.
+-   [x] Track the number of _Rolls_ it took to win the game. Inside **`App`** component, let's define a _state_ called `numOfRolls` and set it's _default value_ to `0`.
 
-	```js
-	const [numOfRolls, setNumOfRolls] = useState(0);
-	```
+    ```js
+    const [numOfRolls, setNumOfRolls] = useState(0);
+    ```
 
--   [x] Inside `rollDice()` function add a couple of statements that change `numOfRolls` state, such that when `Roll` button is clicked *(game is not won)* it increases `numOfRolls` state by 1. And when game is won and `New Game` button is clicked *(game is won)*, `numOfRolls` state is reset back to 0.
+-   [x] Inside `rollDice()` function add a couple of statements that change `numOfRolls` state, such that when `Roll` button is clicked _(game is not won)_ it increases `numOfRolls` state by 1. And when game is won and `New Game` button is clicked _(game is won)_, `numOfRolls` state is reset back to 0.
 
-	```js
-	function rollDice() {
+    ```js
+    function rollDice() {
         if (!tenzies) {
-			setNumOfRolls(prevState => prevState + 1)
+            setNumOfRolls((prevState) => prevState + 1);
         } else {
-			setNumOfRolls(0);
+            setNumOfRolls(0);
         }
     }
-	```
+    ```
+
 -   [x] Create `<h2>` element and insert value of `numOfRolls` state inside it.
 
-	```html
-	<h2 className="track-rolls">Number of Rolls: {numOfRolls}</h2>
-	```
+    ```html
+    <h2 className="track-rolls">Number of Rolls: {numOfRolls}</h2>
+    ```
 
-	Output -> 
-	![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Num-Of-Rolls.png)
-
+    Output ->
+    ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Num-Of-Rolls.png)
 
 ### 17. Make App Responsive 🎨
 
