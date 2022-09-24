@@ -815,6 +815,19 @@ npm start
     }, [dice]);
 	```
 
+-   [x] Update `rollDice()` function such that if *game is won*, *reset* the counter when `New Game` button is clicked.
+
+	```js
+	function rollDice() {
+        if (!tenzies) {
+            //...
+        } else {
+            // Reset timer
+            setTime(0);
+        }
+    }
+	```
+
 ### 18. Make App Responsive 📱
 
 <!-- -   [x] Change _Absolute_ units to _Relative_.
