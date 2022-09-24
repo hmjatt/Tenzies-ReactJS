@@ -828,6 +828,30 @@ npm start
     }
 	```
 
+-   [x] Create *JSX elements* that will hold *values* for `minutes`, `seconds`, `milliseconds`.
+
+	```jsx
+	<h3>
+		<div className="timer">
+			<div className="numbers">
+				<span>
+					{("0" + Math.floor((time / 60000) % 60)).slice(
+						-2
+					)}
+					:
+				</span>
+				<span>
+					{("0" + Math.floor((time / 1000) % 60)).slice(
+						-2
+					)}
+					:
+				</span>
+				<span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
+			</div>
+		</div>
+    </h3>
+	```
+
 ### 18. Make App Responsive 📱
 
 <!-- -   [x] Change _Absolute_ units to _Relative_.
