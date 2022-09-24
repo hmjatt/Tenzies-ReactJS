@@ -852,6 +852,8 @@ npm start
     </h3>
 	```
 
+	Output -> ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Timer.png)
+
 ### 18. Make App Responsive 📱
 
 <!-- -   [x] Change _Absolute_ units to _Relative_.
