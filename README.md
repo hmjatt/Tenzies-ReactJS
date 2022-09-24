@@ -775,7 +775,7 @@ npm start
 	const [time, setTime] = useState(0);
     const [running, setRunning] = useState(false);
 	```
-	
+
 -   [x] Calculate *time* using `useEffect` Hook & `setInterval()` method. Follow [this](https://w3collective.com/react-stopwatch/) article for detailed information.
 
 	```js
@@ -790,6 +790,29 @@ npm start
         }
         return () => clearInterval(interval);
     }, [running]);
+	```
+
+-   [x] Update the `useEffect` Hook, that represents *game state*. Using this hook *Start* or *Stop* the `timer`.
+
+	```js
+	// useEffect Hook that represents game state
+    useEffect(() => {
+        // Check if some Dice are held(even if it's just one)
+        const someHeld = dice.some((die) => die.isHeld);
+
+        // if `someHeld` === True, Start counting
+        if (someHeld) {
+            setRunning(true);
+        }
+
+        // if `allHeld` and `allSameValue)` === true, we won
+        if (allHeld && allSameValue) {
+            // Stop Counter
+            setRunning(false);
+            // Game Won
+            setTenzies(true);
+        }
+    }, [dice]);
 	```
 
 ### 18. Make App Responsive 📱

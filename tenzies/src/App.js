@@ -27,12 +27,12 @@ function App() {
         return () => clearInterval(interval);
     }, [running]);
 
-
+    // useEffect Hook that represents game state
     useEffect(() => {
         // All dice are held
         const allHeld = dice.every((die) => die.isHeld);
 
-        // Check if Dice are held(even if it's just one)
+        // Check if some Dice are held(even if it's just one)
         const someHeld = dice.some((die) => die.isHeld);
 
         // All dice have the same value
@@ -46,9 +46,9 @@ function App() {
 
         // if `allHeld` and `allSameValue)` === true, we won
         if (allHeld && allSameValue) {
-			// Stop Counter
+            // Stop Counter
             setRunning(false);
-			// Game Won
+            // Game Won
             setTenzies(true);
         }
     }, [dice]);
