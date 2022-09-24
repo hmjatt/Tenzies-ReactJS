@@ -771,7 +771,7 @@ npm start
 
 -   [ ] Track the _time_ it took to win the game.
 
-### 18. Make App Responsive 🎨
+### 18. Make App Responsive 📱
 
 <!-- -   [x] Change _Absolute_ units to _Relative_.
 
