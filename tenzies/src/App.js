@@ -4,12 +4,12 @@ import Confetti from "react-confetti";
 import "./styles/App.css";
 import Dice from "./components/Dice";
 import Footer from "./components/Footer";
+import Timer from "./components/Timer";
 
 function App() {
     const [dice, setDice] = useState(allNewDice());
     const [tenzies, setTenzies] = useState(false);
     const [numOfRolls, setNumOfRolls] = useState(0);
-	const [timer, setTimer] = useState(0);
 
     useEffect(() => {
         // All dice are held
@@ -44,7 +44,6 @@ function App() {
     function rollDice() {
         if (!tenzies) {
             setNumOfRolls((prevState) => prevState + 1);
-			setInterval(setTimer(prevState => prevState + 1), 1000)
             setDice((oldDice) =>
                 oldDice.map((dice) => {
                     return dice.isHeld ? dice : generateNewDice();
@@ -56,8 +55,6 @@ function App() {
             setNumOfRolls(0);
         }
     }
-
-	console.log(timer)
 
     function holdDice(id) {
         setDice((oldDice) =>
@@ -88,12 +85,12 @@ function App() {
                     it at its current value between rolls.
                 </p>
                 <h2 className="track-rolls">Number of Rolls: {numOfRolls}</h2>
+				<h3><Timer /></h3>
                 <div className="dice-container">{diceElements}</div>
                 <button className="roll-dice" onClick={rollDice}>
                     {tenzies ? "New Game" : "Roll"}
                 </button>
             </main>
-
             <Footer />
         </div>
     );
