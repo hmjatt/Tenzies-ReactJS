@@ -775,6 +775,22 @@ npm start
 	const [time, setTime] = useState(0);
     const [running, setRunning] = useState(false);
 	```
+	
+-   [x] Calculate *time* using `useEffect` Hook & `setInterval()` method. Follow [this](https://w3collective.com/react-stopwatch/) article for detailed information.
+
+	```js
+	useEffect(() => {
+        let interval;
+        if (running) {
+            interval = setInterval(() => {
+                setTime((prevTime) => prevTime + 10);
+            }, 10);
+        } else if (!running) {
+            clearInterval(interval);
+        }
+        return () => clearInterval(interval);
+    }, [running]);
+	```
 
 ### 18. Make App Responsive 📱
 
