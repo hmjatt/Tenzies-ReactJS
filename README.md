@@ -878,7 +878,7 @@ npm start
 
 -   [x] CSS - Put _Real Dots_ on the _Dice_.
 -   [x] JS - Track Number of _Rolls_ it took to win the game.
--   [ ] JS - Track the _time_ it took to win the game.
+-   [x] JS - Track the _time_ it took to win the game.
 -   [ ] JS - Save _Best Time/Rolls_ to `localStorage` and try to beat the record.
 
 <br>
