@@ -769,7 +769,12 @@ npm start
 
 ### 17. Track The Time (JS Challenge) ⌚
 
--   [x] Track the _time_ it took to win the game.
+-   [x] Track the _time_ it took to win the game. In **`App`** component initiate two states `[time]`, `[running]` and set their default states to `0`, `false` respectively. `[time]` representing the recorded time and `[running]` as if the game is being played or is won.
+
+	```js
+	const [time, setTime] = useState(0);
+    const [running, setRunning] = useState(false);
+	```
 
 ### 18. Make App Responsive 📱
 
