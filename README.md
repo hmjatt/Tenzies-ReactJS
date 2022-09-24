@@ -854,13 +854,19 @@ npm start
 
 	Output -> ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Timer.png)
 
-### 18. Make App Responsive 📱
+### 18. Save Best Time/Rolls (JS Challenge) 💾
+
+-   [ ] Save _Best Time/Rolls_ to `localStorage` and try to beat the record.
+
+
+
+### 19. Make App Responsive 📱
 
 <!-- -   [x] Change _Absolute_ units to _Relative_.
 
 -   [x] Make App responsive for mobile by adding `media query` . :smiley: -->
 
-### 19. Prepare for Deployment 🪢
+### 20. Prepare for Deployment 🪢
 
 <!-- -   [x] Delete **unnecessary** files from directory and format code with `Prettier`.
 
@@ -868,7 +874,7 @@ npm start
 
 -   [x] Add links to `Live Preview` and _screenshots_ ✅. -->
 
-### 18. Deploy 📤
+### 21. Deploy 📤
 
 <!-- -   [x] Use Official Documentation([link](https://create-react-app.dev/docs/deployment/#github-pages)) to push the project to **GitHub Pages** 🎆🎆🎆 -->
 
