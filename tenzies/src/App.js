@@ -4,23 +4,51 @@ import Confetti from "react-confetti";
 import "./styles/App.css";
 import Dice from "./components/Dice";
 import Footer from "./components/Footer";
-import Timer from "./components/Timer";
 
 function App() {
     const [dice, setDice] = useState(allNewDice());
     const [tenzies, setTenzies] = useState(false);
     const [numOfRolls, setNumOfRolls] = useState(0);
 
+    // States for Timer
+    const [time, setTime] = useState(0);
+    const [running, setRunning] = useState(false);
+
+    // Calculate time using useEffect Hook & setInterval() method
+    useEffect(() => {
+        let interval;
+        if (running) {
+            interval = setInterval(() => {
+                setTime((prevTime) => prevTime + 10);
+            }, 10);
+        } else if (!running) {
+            clearInterval(interval);
+        }
+        return () => clearInterval(interval);
+    }, [running]);
+
+
     useEffect(() => {
         // All dice are held
         const allHeld = dice.every((die) => die.isHeld);
+
+        // Check if Dice are held(even if it's just one)
+        const someHeld = dice.some((die) => die.isHeld);
 
         // All dice have the same value
         const firstValue = dice[0].value;
         const allSameValue = dice.every((die) => die.value === firstValue);
 
+        // if `someHeld` === True, Start counting
+        if (someHeld) {
+            setRunning(true);
+        }
+
         // if `allHeld` and `allSameValue)` === true, we won
         if (allHeld && allSameValue) {
+			// Stop Counter
+            setRunning(false);
+			// Game Won
             setTenzies(true);
         }
     }, [dice]);
@@ -53,6 +81,8 @@ function App() {
             setTenzies(false);
             setDice(allNewDice());
             setNumOfRolls(0);
+            // Reset timer
+            setTime(0);
         }
     }
 
@@ -85,7 +115,25 @@ function App() {
                     it at its current value between rolls.
                 </p>
                 <h2 className="track-rolls">Number of Rolls: {numOfRolls}</h2>
-				<h3><Timer /></h3>
+                <h3>
+                    <div className="timer">
+                        <div className="numbers">
+                            <span>
+                                {("0" + Math.floor((time / 60000) % 60)).slice(
+                                    -2
+                                )}
+                                :
+                            </span>
+                            <span>
+                                {("0" + Math.floor((time / 1000) % 60)).slice(
+                                    -2
+                                )}
+                                :
+                            </span>
+                            <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
+                        </div>
+                    </div>
+                </h3>
                 <div className="dice-container">{diceElements}</div>
                 <button className="roll-dice" onClick={rollDice}>
                     {tenzies ? "New Game" : "Roll"}

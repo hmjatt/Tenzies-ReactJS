@@ -769,7 +769,7 @@ npm start
 
 ### 17. Track The Time (JS Challenge) ⌚
 
--   [ ] Track the _time_ it took to win the game.
+-   [x] Track the _time_ it took to win the game.
 
 ### 18. Make App Responsive 📱
 
