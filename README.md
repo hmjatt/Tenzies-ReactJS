@@ -771,15 +771,15 @@ npm start
 
 -   [x] Track the _time_ it took to win the game. In **`App`** component initiate two states `[time]`, `[running]` and set their default states to `0`, `false` respectively. `[time]` representing the recorded time and `[running]` as if the game is being played or is won.
 
-	```js
-	const [time, setTime] = useState(0);
+    ```js
+    const [time, setTime] = useState(0);
     const [running, setRunning] = useState(false);
-	```
+    ```
 
--   [x] Calculate *time* using `useEffect` Hook & `setInterval()` method. Follow [this](https://w3collective.com/react-stopwatch/) article for detailed information.
+-   [x] Calculate _time_ using `useEffect` Hook & `setInterval()` method. Follow [this](https://w3collective.com/react-stopwatch/) article for detailed information.
 
-	```js
-	useEffect(() => {
+    ```js
+    useEffect(() => {
         let interval;
         if (running) {
             interval = setInterval(() => {
@@ -790,12 +790,12 @@ npm start
         }
         return () => clearInterval(interval);
     }, [running]);
-	```
+    ```
 
--   [x] Update the `useEffect` Hook, that represents *game state*. Using this hook *Start* or *Stop* the `timer`.
+-   [x] Update the `useEffect` Hook, that represents _game state_. Using this hook _Start_ or _Stop_ the `timer`.
 
-	```js
-	// useEffect Hook that represents game state
+    ```js
+    // useEffect Hook that represents game state
     useEffect(() => {
         // Check if some Dice are held(even if it's just one)
         const someHeld = dice.some((die) => die.isHeld);
@@ -813,12 +813,12 @@ npm start
             setTenzies(true);
         }
     }, [dice]);
-	```
+    ```
 
--   [x] Update `rollDice()` function such that if *game is won*, *reset* the counter when `New Game` button is clicked.
+-   [x] Update `rollDice()` function such that if _game is won_, _reset_ the counter when `New Game` button is clicked.
 
-	```js
-	function rollDice() {
+    ```js
+    function rollDice() {
         if (!tenzies) {
             //...
         } else {
@@ -826,58 +826,50 @@ npm start
             setTime(0);
         }
     }
-	```
+    ```
 
--   [x] Create *JSX elements* that will hold *values* for `minutes`, `seconds`, `milliseconds`.
+-   [x] Create _JSX elements_ that will hold _values_ for `minutes`, `seconds`, `milliseconds`.
 
-	```jsx
-	<h3>
-		<div className="timer">
-			<div className="current-time">
-				<span>
-					{("0" + Math.floor((time / 60000) % 60)).slice(
-						-2
-					)}
-					:
-				</span>
-				<span>
-					{("0" + Math.floor((time / 1000) % 60)).slice(
-						-2
-					)}
-					:
-				</span>
-				<span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
-			</div>
-		</div>
+    ```jsx
+    <h3>
+        <div className="timer">
+            <div className="current-time">
+                <span>
+                    {("0" + Math.floor((time / 60000) % 60)).slice(-2)}:
+                </span>
+                <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
+                <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
+            </div>
+        </div>
     </h3>
-	```
+    ```
 
-	Output -> ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Timer.png)
+    Output -> ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Timer.png)
 
 ### 18. Save Best Time (JS Challenge) 💾
 
 -   [x] Save _Best Time_ to `localStorage` and try to beat the record. Inside **`App`** component initiate a state `[bestTime]`and set it's default value to `23450`(just a random value).
 
-	```js
-	const [bestTime, setBestTime] = useState(23450);
-	```
+    ```js
+    const [bestTime, setBestTime] = useState(23450);
+    ```
 
--   [x] Using `useEffect` Hook that gets `bestTime` from *localStorage* . Follow [this](https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/) article for detailed instructions.
+-   [x] Using `useEffect` Hook that gets `bestTime` from _localStorage_ . Follow [this](https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/) article for detailed instructions.
 
-	```js
+    ```js
     useEffect(() => {
         const bestTime = JSON.parse(localStorage.getItem("bestTime"));
         if (bestTime) {
             setBestTime(bestTime);
         }
     }, []);
-	```
+    ```
 
--   [x] Update the `useEffect` Hook, that represents *game state*. Using this hook *store* the `currentTime` in *localStorage* `if(currentTime < bestTime)` and also make changes to the *dependency array( add `time`, `bestTime` to it )*.
+-   [x] Update the `useEffect` Hook, that represents _game state_. Using this hook _store_ the `currentTime` in _localStorage_ `if(currentTime < bestTime)` and also make changes to the _dependency array( add `time`, `bestTime` to it )_.
 
-	```js
-	// useEffect Hook that represents game state
-	useEffect(() => {
+    ```js
+    // useEffect Hook that represents game state
+    useEffect(() => {
         // ...
         // if `allHeld` and `allSameValue)` === true, we won
         if (allHeld && allSameValue) {
@@ -892,53 +884,52 @@ npm start
             // ...
         }
     }, [dice, time, bestTime]);
-	```
+    ```
 
--   [x] Create *JSX elements* that will hold  `minutes`, `seconds`, `milliseconds` *values* for `bestTime`. Also, add some styling to `timer` *div*.
+-   [x] Create _JSX elements_ that will hold `minutes`, `seconds`, `milliseconds` _values_ for `bestTime`. Also, add some styling to `timer` _div_.
 
-	```jsx
-	<div className="timer">
-		<div className="current-time">
-			<!-- ... -->
-		</div>
-		<div className="best-time">
-			<h3 className="best">Best</h3>
-			<div>
-				<span>
-					{(
-						"0" + Math.floor((bestTime / 60000) % 60)
-					).slice(-2)}
-					:
-				</span>
-				<span>
-					{(
-						"0" + Math.floor((bestTime / 1000) % 60)
-					).slice(-2)}
-					:
-				</span>
-				<span>
-					{("0" + ((bestTime / 10) % 100)).slice(-2)}
-				</span>
-			</div>
-		</div>
-	</div>
-	```
+    ```jsx
+    <div className="timer">
+    	<div className="current-time">
+    		<!-- ... -->
+    	</div>
+    	<div className="best-time">
+    		<h3 className="best">Best</h3>
+    		<div>
+    			<span>
+    				{(
+    					"0" + Math.floor((bestTime / 60000) % 60)
+    				).slice(-2)}
+    				:
+    			</span>
+    			<span>
+    				{(
+    					"0" + Math.floor((bestTime / 1000) % 60)
+    				).slice(-2)}
+    				:
+    			</span>
+    			<span>
+    				{("0" + ((bestTime / 10) % 100)).slice(-2)}
+    			</span>
+    		</div>
+    	</div>
+    </div>
+    ```
 
-	Styles -> 
-	```css
-	.timer {
-		display: flex;
-		justify-content: space-around;
-		width: 25vw;
-	}
-	.timer h3 {
-		margin: 10px;
-	}
-	```
+    Styles ->
 
-	Output -> ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Best-Time.png)
-	
+    ```css
+    .timer {
+        display: flex;
+        justify-content: space-around;
+        width: 25vw;
+    }
+    .timer h3 {
+        margin: 10px;
+    }
+    ```
 
+    Output -> ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Best-Time.png)
 
 ### 19. Make App Responsive 📱
 
@@ -948,7 +939,7 @@ npm start
 
 ### 20. Prepare for Deployment 🪢
 
--   [ ] Delete **unnecessary** files from directory and format code with `Prettier`.
+-   [x] Delete **unnecessary** files from directory and format code with `Prettier`.
 
 -   [ ] Test for _Responsiveness_ and make changes if need be.
 
