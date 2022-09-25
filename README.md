@@ -942,9 +942,9 @@ npm start
 
 ### 19. Make App Responsive 📱
 
--   [ ] Change _Absolute_ units to _Relative_.
+-   [x] Change _Absolute_ units to _Relative_.
 
--   [ ] Make App responsive for mobile by adding `media query` . :smiley:
+-   [x] Make App responsive for mobile by adding `media query` . :smiley:
 
 ### 20. Prepare for Deployment 🪢
 
