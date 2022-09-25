@@ -948,11 +948,11 @@ npm start
 
 ### 20. Prepare for Deployment 🪢
 
-<!-- -   [x] Delete **unnecessary** files from directory and format code with `Prettier`.
+-   [ ] Delete **unnecessary** files from directory and format code with `Prettier`.
 
--   [x] Test for _Responsiveness_ and make changes if need be ✅.
+-   [ ] Test for _Responsiveness_ and make changes if need be.
 
--   [x] Add links to `Live Preview` and _screenshots_ ✅. -->
+-   [ ] Add links to `Live Preview` and _screenshots_.
 
 ### 21. Deploy 📤
 
@@ -962,10 +962,10 @@ npm start
 
 ## Future Changes ♾️
 
--   [x] CSS - Put _Real Dots_ on the _Dice_.
--   [x] JS - Track Number of _Rolls_ it took to win the game.
--   [x] JS - Track the _time_ it took to win the game.
--   [ ] JS - Save _Best Time/Rolls_ to `localStorage` and try to beat the record.
+-   [x] CSS - Put _Real Dots_ on the _Dice_. ✅
+-   [x] JS - Track Number of _Rolls_ it took to win the game. ✅
+-   [x] JS - Track the _time_ it took to win the game. ✅
+-   [x] JS - Save _Best Time/Rolls_ to `localStorage` and try to beat the record. ✅
 
 <br>
 
