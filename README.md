@@ -936,9 +936,7 @@ npm start
 	}
 	```
 
-
-
-	<!-- Output -> ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Timer.png) [bestTime, setBestTime] = useState(23450); -->
+	Output -> ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Best-Time.png)
 	
 
 
