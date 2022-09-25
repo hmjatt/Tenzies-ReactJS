@@ -2,7 +2,7 @@
 
 Create a **`Tenzies Game`** using `ReactJS`
 
-<!-- ## [Live Preview](https://hmjatt.github.io/Tenzies-ReactJS/) -->
+## [Live Preview](https://hmjatt.github.io/Tenzies-ReactJS/)
 
 ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Mobile.png)
 ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Best-Time.png)
@@ -943,7 +943,7 @@ npm start
 
 -   [x] Test for _Responsiveness_ and make changes if need be.
 
--   [ ] Add links to `Live Preview` and _screenshots_.
+-   [x] Add links to `Live Preview` and _screenshots_.
 
 ### 21. Deploy 📤
 
