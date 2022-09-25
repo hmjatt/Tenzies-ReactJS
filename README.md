@@ -854,9 +854,13 @@ npm start
 
 	Output -> ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Timer.png)
 
-### 18. Save Best Time/Rolls (JS Challenge) 💾
+### 18. Save Best Time (JS Challenge) 💾
 
--   [ ] Save _Best Time/Rolls_ to `localStorage` and try to beat the record.
+-   [x] Save _Best Time_ to `localStorage` and try to beat the record. Inside **`App`** component initiate a state `[bestTime]`and set it's default value to `0`.
+
+	```js
+	const [bestTime, setBestTime] = useState(0);
+	```
 
 
 
