@@ -833,7 +833,7 @@ npm start
 	```jsx
 	<h3>
 		<div className="timer">
-			<div className="numbers">
+			<div className="current-time">
 				<span>
 					{("0" + Math.floor((time / 60000) % 60)).slice(
 						-2
@@ -894,6 +894,52 @@ npm start
     }, [dice, time, bestTime]);
 	```
 
+-   [x] Create *JSX elements* that will hold  `minutes`, `seconds`, `milliseconds` *values* for `bestTime`. Also, add some styling to `timer` *div*.
+
+	```jsx
+	<div className="timer">
+		<div className="current-time">
+			<!-- ... -->
+		</div>
+		<div className="best-time">
+			<h3 className="best">Best</h3>
+			<div>
+				<span>
+					{(
+						"0" + Math.floor((bestTime / 60000) % 60)
+					).slice(-2)}
+					:
+				</span>
+				<span>
+					{(
+						"0" + Math.floor((bestTime / 1000) % 60)
+					).slice(-2)}
+					:
+				</span>
+				<span>
+					{("0" + ((bestTime / 10) % 100)).slice(-2)}
+				</span>
+			</div>
+		</div>
+	</div>
+	```
+
+	Styles -> 
+	```css
+	.timer {
+		display: flex;
+		justify-content: space-around;
+		width: 25vw;
+	}
+	.timer h3 {
+		margin: 10px;
+	}
+	```
+
+
+
+	<!-- Output -> ![This is an image](https://github.com/hmjatt/Tenzies-ReactJS/blob/main/project-output/Timer.png) [bestTime, setBestTime] = useState(23450); -->
+	
 
 
 ### 19. Make App Responsive 📱
