@@ -856,16 +856,16 @@ npm start
 
 ### 18. Save Best Time (JS Challenge) 💾
 
--   [x] Save _Best Time_ to `localStorage` and try to beat the record. Inside **`App`** component initiate a state `[bestTime]`and set it's default value to `0`.
+-   [x] Save _Best Time_ to `localStorage` and try to beat the record. Inside **`App`** component initiate a state `[bestTime]`and set it's default value to `23450`(just a random value).
 
 	```js
-	const [bestTime, setBestTime] = useState(0);
+	const [bestTime, setBestTime] = useState(23450);
 	```
 
 -   [x] Using `useEffect` Hook that gets `bestTime` from *localStorage* . Follow [this](https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/) article for detailed instructions.
 
 	```js
-	useEffect(() => {
+    useEffect(() => {
         const bestTime = JSON.parse(localStorage.getItem("bestTime"));
         if (bestTime) {
             setBestTime(bestTime);
@@ -873,7 +873,7 @@ npm start
     }, []);
 	```
 
--   [x] Update the `useEffect` Hook, that represents *game state*. Using this hook *store* the `bestTime` in *localStorage* and also make changes to the *dependency array( add time, bestTime to it )*.
+-   [x] Update the `useEffect` Hook, that represents *game state*. Using this hook *store* the `currentTime` in *localStorage* `if(currentTime < bestTime)` and also make changes to the *dependency array( add `time`, `bestTime` to it )*.
 
 	```js
 	// useEffect Hook that represents game state

@@ -15,12 +15,7 @@ function App() {
     const [running, setRunning] = useState(false);
 
     // State for Best Time
-    const [bestTime, setBestTime] = useState(0);
-
-
-	// useEffect(() => {
-	// ;
-	// }, [bestTime]);
+    const [bestTime, setBestTime] = useState(23450);
 
     // useEffect Hook that gets bestTime from localStorage
     useEffect(() => {
@@ -67,12 +62,10 @@ function App() {
 
             // Store Time at the end of a win in a variable
             let currentTime = time;
-			setBestTime(currentTime);
-			localStorage.setItem('bestTime', JSON.stringify(currentTime))
 
             // if currentTime > bestTime, store it in localStorage
             if (currentTime < bestTime) {
-                // setBestTime(currentTime);
+                setBestTime(currentTime);
                 localStorage.setItem("bestTime", JSON.stringify(currentTime));
             }
 
