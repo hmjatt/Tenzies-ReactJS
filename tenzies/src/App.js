@@ -14,16 +14,16 @@ function App() {
     const [time, setTime] = useState(0);
     const [running, setRunning] = useState(false);
 
-	// State for Best Time
-	const [bestTime, setBestTime] = useState(0)
+    // State for Best Time
+    const [bestTime, setBestTime] = useState(0);
 
-	// useEffect Hook that gets bestTime in localStorage
-	useEffect(() => {
-		const bestTime = JSON.parse(localStorage.getItem('bestTime'));
-		if (bestTime) {
-		 setBestTime(bestTime);
-		}
-	  }, []);
+    // useEffect Hook that gets bestTime from localStorage
+    useEffect(() => {
+        const bestTime = JSON.parse(localStorage.getItem("bestTime"));
+        if (bestTime) {
+            setBestTime(bestTime);
+        }
+    }, []);
 
     // Calculate time using useEffect Hook & setInterval() method
     useEffect(() => {
@@ -60,15 +60,15 @@ function App() {
             // Stop Counter
             setRunning(false);
 
-			// Store Time at the end of a win in a variable
-			let currentTime = time;
-			console.log(currentTime);
+            // Store Time at the end of a win in a variable
+            let currentTime = time;
+            console.log(currentTime);
 
-			// if currentTime > bestTime, store it in localStorage
-			if(currentTime < bestTime) {
-				setBestTime(currentTime);
-				localStorage.setItem('bestTime', JSON.stringify(currentTime));
-			}
+            // if currentTime > bestTime, store it in localStorage
+            if (currentTime < bestTime) {
+                setBestTime(currentTime);
+                localStorage.setItem("bestTime", JSON.stringify(currentTime));
+            }
 
             // Game Won
             setTenzies(true);
@@ -154,20 +154,22 @@ function App() {
                             </span>
                             <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
                         </div>
-						<div className="best-time">
+                        <div className="best-time">
                             <span>
-                                {("0" + Math.floor((bestTime / 60000) % 60)).slice(
-                                    -2
-                                )}
+                                {(
+                                    "0" + Math.floor((bestTime / 60000) % 60)
+                                ).slice(-2)}
                                 :
                             </span>
                             <span>
-                                {("0" + Math.floor((bestTime / 1000) % 60)).slice(
-                                    -2
-                                )}
+                                {(
+                                    "0" + Math.floor((bestTime / 1000) % 60)
+                                ).slice(-2)}
                                 :
                             </span>
-                            <span>{("0" + ((bestTime / 10) % 100)).slice(-2)}</span>
+                            <span>
+                                {("0" + ((bestTime / 10) % 100)).slice(-2)}
+                            </span>
                         </div>
                     </div>
                 </h3>

@@ -862,6 +862,17 @@ npm start
 	const [bestTime, setBestTime] = useState(0);
 	```
 
+-   [x] Using `useEffect` Hook that gets `bestTime` from *localStorage* . Follow [this](https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/) article for detailed instructions.
+
+	```js
+	useEffect(() => {
+        const bestTime = JSON.parse(localStorage.getItem("bestTime"));
+        if (bestTime) {
+            setBestTime(bestTime);
+        }
+    }, []);
+	```
+
 
 
 ### 19. Make App Responsive 📱
