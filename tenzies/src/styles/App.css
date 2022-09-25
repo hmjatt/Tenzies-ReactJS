@@ -172,3 +172,25 @@ footer a:hover {
 }
 
 /* Footer Component */
+
+/* Media Queries For Responsiveness */
+
+@media only screen and (max-width: 768px) {
+	.App {
+		width: 100vw;
+		/* height: 90vh; */
+	}
+
+	main {
+		width: 98vw;
+		/* height: auto; */
+	}
+
+	.dice-container {
+		gap: 15px;
+	}
+
+	footer {
+		margin-top: 1em;
+	}
+}
