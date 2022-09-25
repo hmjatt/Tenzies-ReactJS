@@ -62,7 +62,6 @@ function App() {
 
             // Store Time at the end of a win in a variable
             let currentTime = time;
-            console.log(currentTime);
 
             // if currentTime > bestTime, store it in localStorage
             if (currentTime < bestTime) {

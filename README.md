@@ -873,6 +873,27 @@ npm start
     }, []);
 	```
 
+-   [x] Update the `useEffect` Hook, that represents *game state*. Using this hook *store* the `bestTime` in *localStorage* and also make changes to the *dependency array( add time, bestTime to it )*.
+
+	```js
+	// useEffect Hook that represents game state
+	useEffect(() => {
+        // ...
+        // if `allHeld` and `allSameValue)` === true, we won
+        if (allHeld && allSameValue) {
+            // ...
+            // Store Time at the end of a win in a variable
+            let currentTime = time;
+            // if currentTime > bestTime, store it in localStorage
+            if (currentTime < bestTime) {
+                setBestTime(currentTime);
+                localStorage.setItem("bestTime", JSON.stringify(currentTime));
+            }
+            // ...
+        }
+    }, [dice, time, bestTime]);
+	```
+
 
 
 ### 19. Make App Responsive 📱
