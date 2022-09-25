@@ -17,6 +17,11 @@ function App() {
     // State for Best Time
     const [bestTime, setBestTime] = useState(0);
 
+
+	// useEffect(() => {
+	// ;
+	// }, [bestTime]);
+
     // useEffect Hook that gets bestTime from localStorage
     useEffect(() => {
         const bestTime = JSON.parse(localStorage.getItem("bestTime"));
@@ -62,10 +67,12 @@ function App() {
 
             // Store Time at the end of a win in a variable
             let currentTime = time;
+			setBestTime(currentTime);
+			localStorage.setItem('bestTime', JSON.stringify(currentTime))
 
             // if currentTime > bestTime, store it in localStorage
             if (currentTime < bestTime) {
-                setBestTime(currentTime);
+                // setBestTime(currentTime);
                 localStorage.setItem("bestTime", JSON.stringify(currentTime));
             }
 
@@ -136,9 +143,10 @@ function App() {
                     it at its current value between rolls.
                 </p>
                 <h2 className="track-rolls">Number of Rolls: {numOfRolls}</h2>
-                <h3>
-                    <div className="timer">
-                        <div className="current-time">
+                <div className="timer">
+                    <div className="current-time">
+                        <h3 className="current">Current</h3>
+                        <div>
                             <span>
                                 {("0" + Math.floor((time / 60000) % 60)).slice(
                                     -2
@@ -153,7 +161,10 @@ function App() {
                             </span>
                             <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
                         </div>
-                        <div className="best-time">
+                    </div>
+                    <div className="best-time">
+                        <h3 className="best">Best</h3>
+                        <div>
                             <span>
                                 {(
                                     "0" + Math.floor((bestTime / 60000) % 60)
@@ -171,7 +182,7 @@ function App() {
                             </span>
                         </div>
                     </div>
-                </h3>
+                </div>
                 <div className="dice-container">{diceElements}</div>
                 <button className="roll-dice" onClick={rollDice}>
                     {tenzies ? "New Game" : "Roll"}

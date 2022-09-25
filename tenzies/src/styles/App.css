@@ -35,6 +35,16 @@ main {
 	margin-top: 1em;
 }
 
+.timer {
+	display: flex;
+	justify-content: space-around;
+	width: 25vw;
+}
+
+.timer h3 {
+	margin: 10px;
+}
+
 .dice-container {
 	display: grid;
 	grid-template: auto auto / repeat(5, 1fr);
